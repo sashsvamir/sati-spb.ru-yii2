@@ -1,0 +1,25 @@
+@charset "UTF-8"
+
+$color-primary: #0083d6
+$color-secondary: #c40058
+$size-max-width: 1200px
+$size-min-width: 800px
+
+
+=btn()
+	border: none
+	min-height: 25px
+	padding: 2px .7rem
+	vertical-align: middle
+	color: #fff
+	box-sizing: border-box
+	cursor: pointer
+	border-radius: 3px
+	background: $color-primary linear-gradient(to bottom, $color-primary, darken($color-primary, 5%))
+	&:hover
+		background: $color-primary linear-gradient(to bottom, lighten($color-primary, 3%), darken($color-primary, 2%))
+		text-decoration: none
+	&:active
+		background: $color-primary linear-gradient(to bottom, darken($color-primary, 8%), lighten($color-primary, 6%))
+
+

@@ -10,4 +10,12 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
     ],
+
+    'params' => [
+    	'phones' => [
+    		'+7 (812) 702-70-91',
+		    '+7 (812) 702-70-92',
+	    ],
+	    'feedback' => 'https://intermehanika.ru/feedback',
+    ],
 ];

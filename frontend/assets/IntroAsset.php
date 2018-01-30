@@ -5,19 +5,19 @@ namespace frontend\assets;
 use yii\web\AssetBundle;
 
 /**
- * Main frontend application asset bundle.
+ * Intro asset bundle.
  */
-class AppAsset extends AssetBundle
+class IntroAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/base.css',
+        'css/intro.css',
     ];
     public $js = [
+    	'js/intro.js'
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        // 'yii\bootstrap\BootstrapAsset',
+	    'yii\web\JqueryAsset',
     ];
 }
