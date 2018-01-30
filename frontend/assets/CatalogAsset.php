@@ -5,17 +5,18 @@ namespace frontend\assets;
 use yii\web\AssetBundle;
 
 /**
- * Intro asset bundle.
+ * Catalog asset bundle.
  */
-class IntroAsset extends AssetBundle
+class CatalogAsset extends AssetBundle
 {
 	public $sourcePath = '@frontend/assets/dist';
 
 	public $css = [
-        'intro.css',
+        'catalog.css',
+        'menu.css',
     ];
     public $js = [
-    	'intro.min.js'
+    	'catalog.min.js'
     ];
     public $depends = [
 	    'yii\web\JqueryAsset',

@@ -1,0 +1,623 @@
+@charset "UTF-8"
+@import 'settings'
+
+
+body
+	min-width: $size-min-width
+	background: #f2f2f2 url('/img/catalog-background.png')
+
+img
+	vertical-align: middle
+
+
+.clearfix
+	clear: both
+
+.image
+	text-align: center
+
+
+
+
+#wrap
+	position: relative
+	max-width: $size-max-width
+	min-width: $size-min-width
+	margin: 0 auto
+	background: #fff
+	box-shadow: 0 0 15px #cecece
+	padding: 40px 30px 100px 30px
+	box-sizing: border-box
+
+	.content
+		max-width: $size-max-width - 100px
+		// min-width: 780px
+		margin: 0 auto
+		// padding: 40px 0 100px
+		// padding: 200px 0 100px
+		// padding: 200px 70px 100px 80px
+		// background: url('/img/logo-intermehanika-gray-small.png') 0 65px no-repeat
+
+
+#footer
+	max-width: $size-max-width
+	min-width: $size-min-width
+	margin: 0 auto
+	overflow: hidden
+	padding-bottom: 1.5rem
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+	font-size: .8rem
+	text-shadow: 1px 1px 1px #fff
+	box-sizing: border-box
+
+	.copyright
+		float: left
+		width: 470px
+		padding: 120px 40px 20px 20px
+		font-style: italic
+		color: #a7a7a7
+		background: url('/img/logo-intermehanika-shadow-medium.png') 20px 30px no-repeat
+
+	.column
+		float: right
+		min-width: 165px
+		padding: 37px 40px 0 0
+		line-height: 1.63
+		h4
+			margin: 0 0 .2rem
+		ul
+			list-style: none
+			padding-left: 0
+			margin-top: 0
+		a
+			border-bottom: 1px dotted #aaa
+			&:hover
+				border-bottom: 1px solid #aaa
+		.phones
+			overflow: hidden
+			font-family: 'Arial', Sans-Serif
+			.phone
+				float: right
+				font-size: .95rem
+				line-height: 1.25
+
+// Если ширина менее 1000px
+@media screen and  (max-width: $size-max-width - 200px)
+	#footer
+		.copyright
+			width: 370px
+			box-sizing: border-box
+			background: url('/img/logo-intermehanika-shadow-small.png') 12px 30px no-repeat
+
+
+
+
+
+
+
+h1
+	margin: 1.25rem 0 2.4rem
+	// font-family: Helvetica
+	font-size: 1.8rem
+	font-weight: normal
+	color: #000
+	line-height: 1.3
+
+h2
+	margin: -1.6rem 0 2.5rem
+	// font-family: Helvetica
+	font-size: 1.15rem
+	font-weight: normal
+	color: #000
+	line-height: 1.25
+
+
+
+
+
+
+
+
+
+
+a.scrollTop
+	position: fixed
+	z-index: 20
+	top: 10px
+	right: 50px
+	width: 51px
+	height: 51px
+	padding-top: 30px
+	box-sizing: border-box
+	color: #fff
+	font-size: .7rem
+	font-weight: bold
+	text-align: center
+	text-decoration: none
+	background: url(/img/scroll_to_top_51x51.png) no-repeat
+	border-radius: 10px
+	opacity: .8
+	display: none
+	&:hover
+		opacity: 1
+
+
+
+
+
+
+
+
+
+/*
+ *	Меню сверху страницы
+ */
+#fast-menu
+	border-bottom: 1px dotted #666
+	margin: 0 0 1rem 0
+
+	// .native-columns
+		// -webkit-columns: 4
+	// >ul >li
+		// -webkit-column-break-inside: avoid
+
+	a
+		color: #000
+		&:hover
+			color: $color-primary
+
+	>ul.native-columns
+		list-style: none
+		padding-left: 0
+		padding-bottom: 2.5rem
+		margin: 0
+		li
+			margin: .2rem 0
+			a
+				white-space: nowrap
+				img
+					position: relative
+					top: 3px
+					margin-right: .7rem
+					height: 46px
+					width: 46px
+				span
+					font-size: .8rem
+					white-space: nowrap
+					border-bottom: 1px dotted #666
+					padding-bottom: 2px
+			&.active
+				a
+					color: $color-secondary
+					span
+						text-decoration: none
+						border-bottom: none
+					&:hover
+						text-decoration: underline
+
+	.subcategories
+		padding: 0 1rem 2rem 0
+		font-size: 0.8rem
+		margin: 0 0 .5rem
+		text-align: center
+
+		lh
+			font-weight: bold
+			display: block
+			color: $color-secondary
+			margin: 0 0 .4rem
+			a
+				color: $color-secondary
+				&:hover
+					text-decoration: underline
+
+		li.subcategory
+			display: inline-block
+			// float: left
+			margin: 0 1rem .4rem .5rem
+			position: relative
+			list-style: none
+			padding: .05rem .5rem .05rem
+
+			a
+				border-bottom: 1px dotted #000
+				padding-bottom: 1px
+
+			&:before
+				content: ""
+				position: absolute
+				left: -4px
+				top: 9px
+				background: url(/img/icon-menu-list-arrow.png) left center no-repeat
+				width: 8px
+				height: 5px
+
+			&.active
+				background: $color-primary
+				border-radius: 2px
+				&:before
+					display: none
+				a
+					color: #fff
+					border: none
+					cursor: default
+
+
+
+
+// Если ширина менее 1100px
+@media screen and  (max-width: $size-max-width - 100px)
+	#fast-menu
+		>ul.native-columns
+			li
+				a
+					img
+						margin-right: .2rem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ *	Категории на странице продуктов
+ */
+#product-tree
+	margin: 0 auto 4rem
+	font-size: .8rem
+	padding: 0 0 1rem
+
+	.first
+		position: relative
+		padding-right: 0
+		direction: rtl
+		.name
+			padding-right: 12px
+		>li
+			padding-right: 4rem
+			ul
+				padding-right: 74px
+				.name
+					padding-right: 0
+
+	.last
+		>li
+			padding-left: 4rem
+
+	// level 1
+	ul
+		list-style: none
+		padding-left: 0
+		li
+			// margin-top: .5rem
+			a
+				margin-top: .5rem
+				display: inline-block
+				img
+					// position: relative
+					// top: 15px
+					width: 62px
+					height: 62px
+					margin-top: .75rem
+				.name
+					padding-left: 12px
+					font-weight: bold
+		// level 2
+		ul
+			margin-top: -1.25rem
+			padding-left: 74px
+			list-style: circle
+			li
+				// margin-top: -1px
+				a
+					margin: 0
+					.name
+						padding-left: 0
+						font-weight: normal
+						display: inline-block
+						line-height: 1
+						vertical-align: middle
+	a
+		color: #000
+		&:hover
+			span
+				text-decoration: underline
+
+
+// Если ширина меньше 1000px
+@media screen and  (max-width: $size-max-width - 200px)
+	#product-tree
+		.native-columns
+			>li
+				padding-left: 10%
+
+// Если ширина меньше 860px
+@media screen and  (max-width: $size-max-width - 340px)
+	#product-tree
+		.native-columns
+			>li
+				padding-left: 0
+
+
+
+
+
+
+
+
+
+
+
+.breadcrumbs
+	position: relative
+	z-index: 2
+	margin-bottom: 3.4rem
+	a,
+	span
+		font-family: 'Times New Romain', 'Times', Serif
+		font-size: .9rem
+		font-style: italic
+		color: #000
+		margin: 0 .2rem
+	a
+		text-decoration: underline
+		&:first-child
+			margin-left: 0
+
+
+
+
+
+
+
+
+
+
+#search_results
+
+	form
+		text-align: center
+		margin-bottom: 3rem
+
+		[type="text"]
+			height: 25px
+			padding: 2px .3rem
+			margin-right: 0
+			border-radius: 2px
+			vertical-align: middle
+			font-size: .8rem
+			box-sizing: border-box
+			min-width: 220px
+			border: 1px solid #666
+
+		[type="submit"]
+			+btn()
+			font-size: .8rem
+			margin-left: 0
+
+
+	.header
+		margin-bottom: 2rem
+	ul
+		list-style: none
+		padding: 0
+		.result
+			margin-bottom: 1.5rem
+			padding-bottom: 1.5rem
+			border-bottom: 1px dotted #ccc
+			a
+				img
+					margin-right: 14px
+					vertical-align: middle
+			.text
+				display: block
+				margin-left: 60px
+				margin-top: -8px
+				// font-size: .8rem
+				b
+					border-bottom: 1px dashed #000
+
+			&:last-child
+				border: none
+
+
+
+
+
+
+
+
+
+.item-background
+	width: 100%
+	position: absolute
+	z-index: 1
+	left: 0
+	margin-top: -93px
+	&#item-6
+		height: 400px
+		background: url(/img/items/06/bg.jpg) top no-repeat
+	&#item-7
+		height: 465px
+		background: url(/img/items/7/bg.jpg) top no-repeat
+	&#item-33
+		height: 465px
+		background: url(/img/items/33/bg.jpg) top left no-repeat
+	&#item-35
+		height: 465px
+		background: url(/img/items/35/bg.jpg) top no-repeat
+	&#item-38
+		height: 465px
+		background: url(/img/items/38/bg.jpg) top left no-repeat
+	&#item-29
+		height: 465px
+		background: url(/img/items/29/bg.jpg) top no-repeat
+	&#item-5
+		height: 465px
+		background: url(/img/items/5/bg.jpg) top no-repeat
+	&#item-9
+		height: 465px
+		background: url(/img/items/9/bg.jpg) top no-repeat
+	&#item-46
+		height: 465px
+		background: url(/img/items/46/bg.jpg) top right no-repeat
+	&#item-11
+		height: 465px
+		background: url(/img/items/11/bg.jpg) top no-repeat
+
+.article
+	position: relative
+	z-index: 2
+
+
+
+
+.image-head
+	float: right
+	margin-top: -50px
+	padding: 0 0 10px 10px
+.content
+	span.phone
+		color: #e60013
+		font-weight: bold
+
+
+
+
+
+
+
+
+
+/* table common */
+table
+	border-collapse: collapse
+	margin: 1rem auto
+
+table
+	th
+		background: #eee
+
+table[border]
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+	font-size: .75rem
+	th,
+	td
+		padding: 8px 15px
+		text-align: center
+
+
+/* table thin and thin-gray */
+table.thin,
+table.thin-gray
+	font-size: .6rem
+	border: 1px solid #ccc
+	// border-width: 1px
+	// border-style: ride
+	th
+		padding: 8px 15px
+		font-size: .7rem
+		vertical-align: middle
+	td
+		border: 1px solid #ccc
+		padding: 0
+		color: #777
+		vertical-align: middle
+
+table.thin
+	th
+		color: #fff
+		background: $color-primary
+		border: 1px solid #0065a5
+
+table.thin-gray
+	th
+		background: #e9e9e9
+		border: 1px solid #ababab
+
+.hint
+	margin: 0
+	font-size: .7rem
+
+
+/* formula */
+.formula-inline
+	font-family: 'Georgia'
+	font-size: 1.05rem
+	line-height: .8rem
+	white-space: nowrap
+
+.formula
+	font-family: 'Georgia'
+
+	.operator
+		font-size: 1.5rem
+		line-height: .8rem
+
+table.formula
+	td
+		padding: 8px 15px
+		font-size: 1.05rem
+		line-height: .8rem
+		text-align: center
+
+		&.delimiter
+			border-bottom: 1px solid #000
+
+
+
+
+/* table downloads */
+table.item-files
+	margin: 26px 0 0 0
+	overflow: hidden
+	color: #000
+	text-shadow: 1px 1px 1px #fff
+	-webkit-border-radius: 10px
+	-webkit-box-shadow: 2px 2px 3px #aaa
+	border-collapse: collapse
+	border: 0
+	tr
+		&:nth-child(odd)
+			td:nth-child(odd)
+				background-color: #e3e5e5
+
+		&:nth-child(even)
+			td:nth-child(even)
+				background-color: #e3e5e5
+		td
+			background-color: #eff0f0
+			padding: 16px 22px
+			border: 0
+			text-align: left
+
+			&:nth-child(odd)
+				min-width: 350px
+				font-size: .8rem
+
+
+.table-label
+	font-size: .75rem
+	line-height: 1.2
+	font-style: italic
+	margin-bottom: -0.8rem
+
+
+
+
+
+
+
+
+
+
+
+

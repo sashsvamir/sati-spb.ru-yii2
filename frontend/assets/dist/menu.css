@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/**
+ *	Меню
+ */
+#menu {
+  z-index: 10;
+  position: relative;
+  height: 61px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  background: #fff;
+  box-shadow: 0 0 55px rgba(0, 0, 0, 0.1); }
+  #menu a {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 300; }
+  #menu > ul {
+    max-width: 1200px;
+    min-width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0 30px;
+    text-align: right;
+    box-sizing: border-box; }
+    #menu > ul .logo {
+      display: block;
+      position: absolute;
+      width: 107px;
+      height: 45px;
+      background: url(/img/logo-menu-small.png) no-repeat;
+      margin-top: 9px;
+      text-align: left;
+      transition: all 0.4s; }
+      #menu > ul .logo:hover {
+        opacity: 0.8; }
+      #menu > ul .logo a {
+        display: block;
+        overflow: hidden;
+        text-indent: -999px;
+        width: 100%;
+        height: 100%; }
+    #menu > ul .products,
+    #menu > ul .feedback,
+    #menu > ul .contacts {
+      display: inline-block;
+      padding: 19px 0 0 0;
+      margin-right: 50px; }
+      #menu > ul .products a,
+      #menu > ul .feedback a,
+      #menu > ul .contacts a {
+        position: relative; }
+        #menu > ul .products a:hover,
+        #menu > ul .feedback a:hover,
+        #menu > ul .contacts a:hover {
+          text-decoration: underline; }
+      #menu > ul .products.dropdown a,
+      #menu > ul .feedback.dropdown a,
+      #menu > ul .contacts.dropdown a {
+        padding-right: 15px; }
+        #menu > ul .products.dropdown a:hover,
+        #menu > ul .feedback.dropdown a:hover,
+        #menu > ul .contacts.dropdown a:hover {
+          text-decoration: none;
+          border-bottom: 1px dashed #666; }
+        #menu > ul .products.dropdown a:after,
+        #menu > ul .feedback.dropdown a:after,
+        #menu > ul .contacts.dropdown a:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 7px;
+          right: 2px;
+          width: 8px;
+          height: 5px;
+          background: url(/img/icon-menu-link-arrow-black.png) no-repeat;
+          opacity: 0.9; }
+    #menu > ul .products {
+      box-sizing: border-box;
+      height: 100%;
+      position: relative; }
+    #menu > ul .feedback {
+      padding-top: 17px; }
+      #menu > ul .feedback a {
+        border: none;
+        min-height: 25px;
+        padding: 2px 0.7rem;
+        vertical-align: middle;
+        color: #fff;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-radius: 3px;
+        background: #0083d6 linear-gradient(to bottom, #0083d6, #0073bd);
+        padding: 7px 14px; }
+        #menu > ul .feedback a:hover {
+          background: #0083d6 linear-gradient(to bottom, #008ce5, #007dcc);
+          text-decoration: none; }
+        #menu > ul .feedback a:active {
+          background: #0083d6 linear-gradient(to bottom, #006aad, #0096f5); }
+    #menu > ul .search {
+      position: relative;
+      display: inline-block; }
+      #menu > ul .search [type="text"] {
+        border-radius: 4px;
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+        border: 1px solid #444;
+        transition: width 0.2s, padding-left 0.2s; }
+      #menu > ul .search [type="submit"] {
+        text-indent: -999px;
+        width: 22px;
+        height: 22px;
+        border: none;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        background: url(/img/icon-menu-button-search-black.png) left center no-repeat; }
+      #menu > ul .search.unfocused [type="text"], #menu > ul .search.focused [type="text"] {
+        border: none; }
+      #menu > ul .search.unfocused [type="submit"], #menu > ul .search.focused [type="submit"] {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        text-indent: -999px;
+        width: 22px;
+        height: 22px;
+        border: none;
+        margin-left: 0.5rem;
+        cursor: pointer; }
+      #menu > ul .search.unfocused [type="text"] {
+        background: none;
+        width: 0; }
+      #menu > ul .search.unfocused [type="submit"] {
+        margin-left: 0; }
+      #menu > ul .search.focused [type="text"] {
+        padding-left: 30px;
+        width: 170px;
+        border: 1px solid #444; }
+      #menu > ul .search.focused [type="submit"] {
+        margin-left: 0.4rem; }
+
+/**
+ *	Всплывающее меню категорий продуктов
+ */
+#products-list {
+  z-index: 15;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 45px 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  background: #fff;
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.6);
+  min-width: 800px; }
+  #products-list .menu-products-arrow {
+    content: "";
+    z-index: 20;
+    position: absolute;
+    top: -13px;
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent; }
+  #products-list .products-list-content {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 10%;
+    padding-right: 1%; }
+    #products-list .products-list-content a {
+      color: #666; }
+      #products-list .products-list-content a:hover {
+        color: #0083d6;
+        text-decoration: underline; }
+    #products-list .products-list-content ul {
+      padding-left: 0;
+      list-style: none; }
+    #products-list .products-list-content ul, #products-list .products-list-content li, #products-list .products-list-content .name {
+      margin: 0;
+      line-height: 1.5; }
+    #products-list .products-list-content .category-level-1 {
+      position: relative; }
+      #products-list .products-list-content .category-level-1:before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 6px;
+        background: url(/img/icon-menu-list-arrow.png) left center no-repeat;
+        width: 8px;
+        height: 5px; }
+    #products-list .products-list-content .active > a {
+      color: #0083d6 !important;
+      text-decoration: none;
+      font-weight: bold; }
+    #products-list .products-list-content .category-level-1 > .name,
+    #products-list .products-list-content .category-level-1 .name.parent {
+      font-weight: bold; }
+    #products-list .products-list-content .category-level-1 {
+      margin: 1.2rem 0; }
+    #products-list .products-list-content .category-level-1 > .name a,
+    #products-list .products-list-content .parent > .name a {
+      color: #333; }
+    #products-list .products-list-content .category-level-2.parent {
+      margin: 0.2rem 0; }
+    #products-list .products-list-content .category-level-3 {
+      padding-left: 0.5rem; }
+    #products-list .products-list-content .column > li:first-child {
+      margin-top: 0; }
+    #products-list .products-list-content .column > li:last-child {
+      margin-bottom: 0; }
+    #products-list .products-list-content .column {
+      box-sizing: border-box; }
+
+/**
+ *	Окно контактов
+ */
+#contacts-info {
+  z-index: 9;
+  position: absolute;
+  overflow: hidden;
+  left: 60%;
+  min-width: 350px;
+  box-sizing: border-box;
+  padding: 15px 30px 15px 25px;
+  text-align: right;
+  background: #fff url(/img/phone-small.png) 30px 50px no-repeat;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.33);
+  color: #444; }
+  #contacts-info:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    box-shadow: 0px 5px 10px #aaa;
+    border-radius: 0 0 400px 400px/0 0 30px 30px; }
+  #contacts-info .header {
+    font-family: "Times New Romain", Times, serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    margin: 0; }
+  #contacts-info .phones {
+    font-size: 1.3rem;
+    color: #0083d6;
+    margin: 7px 0 0 0;
+    word-spacing: 0.2em;
+    line-height: 1.15; }
+  #contacts-info .feedback {
+    margin: 5px 0 0 0;
+    font-family: "Times New Romain", "Times", serif;
+    font-size: 1rem;
+    font-style: italic; }
+    #contacts-info .feedback a {
+      color: #77787b;
+      border-bottom: 1px dotted #77787b;
+      transition: background 0.3s ease, color 1s ease, padding 0.1s, border 0.1s; }
+      #contacts-info .feedback a:hover {
+        color: #fff;
+        background: #0083d6;
+        border: none;
+        padding: 0 10px 2px 10px; }

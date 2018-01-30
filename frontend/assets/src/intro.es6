@@ -1,8 +1,10 @@
 
 $(document).ready(function() {
+
 	// get total width of all 'li' elements
-	var totalWidth = 0;
-	var slider = $('#slider');
+	let totalWidth = 0;
+	const slider = $('#slider');
+
 	slider.find('li').each(function() {
 		totalWidth += $(this).outerWidth();
 	});

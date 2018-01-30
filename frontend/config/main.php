@@ -13,6 +13,11 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => 'intro/index',
     'components' => [
+	    'assetManager' => [
+	    	'class' => 'yii\web\AssetManager',
+		    'linkAssets' => true,
+		    'appendTimestamp' => true,
+	    ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
