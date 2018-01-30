@@ -8,7 +8,7 @@ use yii\web\Controller;
  */
 class IntroController extends Controller
 {
-	public $layout = 'intro';
+	public $layout = '_intro';
 
     /**
      * Displays homepage.

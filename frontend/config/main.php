@@ -12,6 +12,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'defaultRoute' => 'intro/index',
+    'layout' => '_catalog',
     'components' => [
 	    'assetManager' => [
 	    	'class' => 'yii\web\AssetManager',
@@ -46,6 +47,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+	            'page/<view>'=>'site/page',
             ],
         ],
     ],

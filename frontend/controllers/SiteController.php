@@ -2,6 +2,8 @@
 namespace frontend\controllers;
 
 use yii\web\Controller;
+use yii\web\ViewAction;
+
 
 /**
  * Site controller
@@ -18,6 +20,10 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
+            'page' => [
+	        	'class' => ViewAction::className(),
+		        'viewPrefix' => 'page',
+	        ],
         ];
     }
 
@@ -26,9 +32,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
+    // public function actionAbout()
+    // {
+    //     return $this->render('about');
+    // }
+
+
 
 }

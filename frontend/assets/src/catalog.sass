@@ -75,7 +75,7 @@ img
 				border-bottom: 1px solid #aaa
 		.phones
 			overflow: hidden
-			font-family: 'Arial', Sans-Serif
+			font-family: 'Arial', sans-serif
 			.phone
 				float: right
 				font-size: .95rem
@@ -356,21 +356,29 @@ a.scrollTop
 
 
 
-.breadcrumbs
+.breadcrumb
 	position: relative
 	z-index: 2
-	margin-bottom: 3.4rem
-	a,
-	span
-		font-family: 'Times New Romain', 'Times', Serif
+	margin: 0 0 3.4rem
+	list-style: none
+	padding-left: 0
+	li
+		display: inline-block
+		font-family: 'Times New Romain', 'Times', serif
 		font-size: .9rem
 		font-style: italic
-		color: #000
-		margin: 0 .2rem
-	a
-		text-decoration: underline
-		&:first-child
-			margin-left: 0
+		a
+			color: #000
+			text-decoration: underline
+			&:first-child
+				margin-left: 0
+		&:after
+			content: " » "
+			margin: 0 .2rem
+			font-style: normal
+			font-family: Arial, "Arial Cyr", Helvetica, sans-serif
+		&:last-child:after
+			content: '' !important
 
 
 

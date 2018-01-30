@@ -59,7 +59,7 @@ img {
         border-bottom: 1px solid #aaa; }
     #footer .column .phones {
       overflow: hidden;
-      font-family: "Arial", Sans-Serif; }
+      font-family: "Arial", sans-serif; }
       #footer .column .phones .phone {
         float: right;
         font-size: 0.95rem;
@@ -241,21 +241,29 @@ a.scrollTop {
 @media screen and (max-width: 860px) {
   #product-tree .native-columns > li {
     padding-left: 0; } }
-.breadcrumbs {
+.breadcrumb {
   position: relative;
   z-index: 2;
-  margin-bottom: 3.4rem; }
-  .breadcrumbs a,
-  .breadcrumbs span {
-    font-family: "Times New Romain", "Times", Serif;
+  margin: 0 0 3.4rem;
+  list-style: none;
+  padding-left: 0; }
+  .breadcrumb li {
+    display: inline-block;
+    font-family: "Times New Romain", "Times", serif;
     font-size: 0.9rem;
-    font-style: italic;
-    color: #000;
-    margin: 0 0.2rem; }
-  .breadcrumbs a {
-    text-decoration: underline; }
-    .breadcrumbs a:first-child {
-      margin-left: 0; }
+    font-style: italic; }
+    .breadcrumb li a {
+      color: #000;
+      text-decoration: underline; }
+      .breadcrumb li a:first-child {
+        margin-left: 0; }
+    .breadcrumb li:after {
+      content: " » ";
+      margin: 0 0.2rem;
+      font-style: normal;
+      font-family: Arial, "Arial Cyr", Helvetica, sans-serif; }
+    .breadcrumb li:last-child:after {
+      content: "" !important; }
 
 #search_results form {
   text-align: center;
