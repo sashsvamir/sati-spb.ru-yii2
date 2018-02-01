@@ -47,7 +47,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-	            'page/<view>'=>'site/page',
+	            'catalog' => 'catalog/index',
+	            'catalog/<url>' => 'catalog/view',
+	            'page/<view>' => 'site/page',
+	            '<url:main.php>'=>'catalog/view',
             ],
         ],
     ],
