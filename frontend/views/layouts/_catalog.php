@@ -31,10 +31,12 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 	<? if (Yii::$app->controller->id !== 'catalog') : // выводить появляющееся меню продуктов если не открыт продукт (/catalog/view) или его список (/catalog/index) ?>
 
+		<? // todo: register script ?>
 		<?// Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/jquery.columnizer.min.js') ?>
 
 		<div id="products-list">
 			<div class="products-list-content">
+				<? // todo: make widget ?>
 				<?// $this->widget('application.extensions.category-tree.CategoryTreeWidget') ?>
 			</div>
 		</div>
@@ -62,6 +64,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 			<?
 				// если открыт продукт
 				if (Yii::$app->controller->id === 'catalog' && Yii::$app->controller->action->id === 'view') {
+					// todo: make widget
 					// $this->widget('application.extensions.category-tree.CategoryTreeWidget', [
 					// 	'type' => 'fast-menu',
 					// 	'htmlOptions' => [
@@ -75,9 +78,6 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 				if (isset($this->params['breadcrumbs'])) {
 					echo Breadcrumbs::widget([
 						'homeLink' => ['label' => 'Главная', 'url' => '/'],
-						// 'tag' => 'div',
-						// 'itemTemplate' => '{link}',
-						// 'activeItemTemplate' => '{link}',
 						'encodeLabels' => false,
 						'links' => $this->params['breadcrumbs'],
 					]);

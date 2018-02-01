@@ -13,6 +13,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'Sati, приводн
 <div id="slider">
 	<div class="container">
 		<?
+		// todo: make widget
 		// $this->widget('application.extensions.ItemsMenu.ItemsMenu', [
 		// 	'htmlOptions' => [
 		// 		'class' => 'items',

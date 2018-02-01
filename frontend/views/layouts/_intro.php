@@ -4,9 +4,8 @@
 /* @var $content string */
 
 $this->registerAssetBundle(\frontend\assets\IntroAsset::className());
-$this->registerMetaTag(['name' => 'description', 'content' => 'Приводная техника']);
-$this->registerMetaTag(['name' => 'keywords', 'content' => 'приводная техника, приводную технику, техникой приводной']);
 ?>
+
 
 <? $this->beginContent(Yii::$app->getLayoutPath() . '/main.php'); ?>
 
