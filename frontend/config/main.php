@@ -44,13 +44,20 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            'enablePrettyUrl' => true,
+	        'class' => 'yii\web\UrlManager',
+	        'enablePrettyUrl' => true,
             'showScriptName' => false,
+            // 'enableStrictParsing' => true,
+            // 'hostInfo' => 'http://sati-spb',
             'rules' => [
 	            'catalog' => 'catalog/index',
 	            'catalog/<url>' => 'catalog/view',
-	            '<url:main.php>'=>'catalog/view',
+	            '<url:main.php>'=>'catalog/view', // redirect old urls
+
 	            'page/<view>' => 'site/page',
+
+	            'sitemap' => 'sitemap/index',
+	            'sitemap.xml' => 'sitemap/xml',
             ],
         ],
     ],
