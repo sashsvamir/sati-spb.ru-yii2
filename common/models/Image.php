@@ -4,14 +4,14 @@ namespace common\models;
 use yii\db\ActiveRecord;
 
 
-class Link extends ActiveRecord
+class Image extends ActiveRecord
 {
 	/**
 	 * @inheritdoc
 	 */
 	public static function tableName()
 	{
-		return '{{%link}}';
+		return '{{%image}}';
 	}
 
 }

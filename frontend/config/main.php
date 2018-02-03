@@ -49,8 +49,8 @@ return [
             'rules' => [
 	            'catalog' => 'catalog/index',
 	            'catalog/<url>' => 'catalog/view',
-	            'page/<view>' => 'site/page',
 	            '<url:main.php>'=>'catalog/view',
+	            'page/<view>' => 'site/page',
             ],
         ],
     ],

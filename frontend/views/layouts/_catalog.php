@@ -4,6 +4,8 @@
 /* @var $content string */
 
 use yii\widgets\Breadcrumbs;
+use common\widgets\CategoryTree\CategoryTree;
+
 
 $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
@@ -36,8 +38,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 		<div id="products-list">
 			<div class="products-list-content">
-				<? // todo: make widget ?>
-				<?// $this->widget('application.extensions.category-tree.CategoryTreeWidget') ?>
+				<?= CategoryTree::widget() ?>
 			</div>
 		</div>
 
@@ -61,28 +62,26 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 		<div class="content">
 
-			<?
+			<? if (Yii::$app->controller->id === 'catalog' && Yii::$app->controller->action->id === 'view') {
 				// если открыт продукт
-				if (Yii::$app->controller->id === 'catalog' && Yii::$app->controller->action->id === 'view') {
-					// todo: make widget
-					// $this->widget('application.extensions.category-tree.CategoryTreeWidget', [
-					// 	'type' => 'fast-menu',
-					// 	'htmlOptions' => [
-					// 		'id' => 'fast-menu',
-					// 	],
-					// ]);
-				}
-			?>
+				echo CategoryTree::widget([
+					'view' => 'fast-menu',
+					'htmlOptions' => [
+						'id' => 'fast-menu',
+					],
+				]);
+			} ?>
 
-			<?
-				if (isset($this->params['breadcrumbs'])) {
-					echo Breadcrumbs::widget([
-						'homeLink' => ['label' => 'Главная', 'url' => '/'],
-						'encodeLabels' => false,
-						'links' => $this->params['breadcrumbs'],
-					]);
-				}
-			?>
+			<? if (isset($this->params['breadcrumbs'])) {
+				echo Breadcrumbs::widget([
+					'homeLink' => [
+						'label' => 'Главная',
+						'url' => '/',
+					],
+					'encodeLabels' => false,
+					'links' => $this->params['breadcrumbs'],
+				]);
+			} ?>
 
 			<?= $content ?>
 

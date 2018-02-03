@@ -2,29 +2,34 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use common\widgets\ItemAttach\ItemAttach;
 
 /* @var $this yii\web\View */
+/* @var $model \common\models\Item */
 
 
 
 // Seo headers
-if ($model->seo) {
-	$this->title = $model->seo->title;
-	$this->registerMetaTag(['name' => 'description', 'content' => $model->seo->description]);
-	$this->registerMetaTag(['name' => 'keywords', 'content' => $model->seo->keywords]);
-}
+$this->title = $model->meta_title;
+$this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
+$this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords]);
 
 
 
 // Create breadcrumbs
 // если страница привзана к категории
-if ($ancestors = $model->category) {
+if ($category = $model->category) {
 	// если у категории есть предки
-	if($ancestors = $ancestors->ancestors()->findAll()){
-		foreach ($ancestors as $ancestor) {
+	if ($parents = $category->getParents()->all()) {
+		foreach ($parents as $parent) {
 			// если к предку привязана страница, укажем ее в хлебн. крошках
-			if($parent = $ancestor->item)
-				$this->params['breadcrumbs'][$parent->category->title] = Url::to(['/catalog/' . $parent->link->link]);
+			/** @var $item \common\models\Item */
+			if ($item = $parent->item) {
+				$this->params['breadcrumbs'][] = [
+					'label' => $item->category->title,
+					'url' => Url::to(['catalog/view', 'url' => $item->url]),
+				];
+			}
 		}
 	}
 }
@@ -63,10 +68,10 @@ $this->params['breadcrumbs'][] = $model->category ? $model->category->title : $m
 </div>
 
 
-<?
-// todo: make widget
-// $this->widget('application.extensions.ItemsInfo.ItemsInfo', [
-// 	'infofile_id' => $model->info_id,
-// ]);
-?><!-- info files list -->
+
+
+<?= ItemAttach::widget([
+	'attach' => $model->attach,
+]) ?>
+
 

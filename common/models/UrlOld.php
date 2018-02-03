@@ -4,14 +4,14 @@ namespace common\models;
 use yii\db\ActiveRecord;
 
 
-class Seo extends ActiveRecord
+class UrlOld extends ActiveRecord
 {
 	/**
 	 * @inheritdoc
 	 */
 	public static function tableName()
 	{
-		return '{{%seo}}';
+		return '{{%item_url_old}}';
 	}
 
 }

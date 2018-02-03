@@ -13,6 +13,8 @@ use common\models\Item;
  */
 class CatalogController extends Controller
 {
+	/** @var Item */
+	public $current_item;
 
     /**
      * @return mixed
@@ -21,7 +23,7 @@ class CatalogController extends Controller
     {
 	    $model = $this->findModel('default');
 
-	    // $this->current_item = $model->id;
+	    $this->current_item = $model;
 
 	    return $this->render('index', [
 		    'model' => $model,
@@ -40,7 +42,7 @@ class CatalogController extends Controller
 
 	    $model = $this->findModel($url);
 
-	    // $this->current_item = $model->id;
+	    $this->current_item = $model;
 
 	    return $this->render('view', array(
 		    'model' => $model,
@@ -59,7 +61,7 @@ class CatalogController extends Controller
 		if ($request->get('url') === 'main.php' && $b = $request->get('b')) {
 			$model = $this->findModelOld($b);
 
-			return $this->redirect('/catalog/' . $model->link->link, 301);
+			return $this->redirect(['catalog/view', 'url' => $model->url], 301);
 		}
 
 		return null;
@@ -70,13 +72,10 @@ class CatalogController extends Controller
 	 */
 	protected function findModel(string $url) : Item
 	{
-		$model = Item::find()->leftJoin('link', 'link.item_id = item.id')->where(['link.link' => $url])->one();
-
-		if ($model === null) {
-			throw new NotFoundHttpException('The requested page does not exist.');
+		if (($model = Item::findOne(['url' => $url])) !== null) {
+			return $model;
 		}
-
-		return $model;
+		throw new NotFoundHttpException('The requested page does not exist.');
 	}
 
 	/**
@@ -84,13 +83,12 @@ class CatalogController extends Controller
 	 */
 	protected function findModelOld(string $url_old) : Item
 	{
-		$model = Item::find()->leftJoin('link', 'link.item_id = item.id')->where(['link.link_old' => $url_old])->one();
+		$model = Item::find()->leftJoin('item_url_old', 'item_url_old.item_id = item.id')->where(['item_url_old.url' => $url_old])->one();
 
-		if ($model === null) {
-			throw new NotFoundHttpException('The requested page does not exist.');
+		if ($model !== null) {
+			return $model;
 		}
-
-		return $model;
+		throw new NotFoundHttpException('The requested page does not exist.');
 	}
 
 }

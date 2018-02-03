@@ -10,22 +10,6 @@ use yii\db\ActiveQuery;
  */
 class ItemQuery extends ActiveQuery
 {
-	/**
-	 * @inheritdoc
-	 */
-	/*public function visible()
-	{
-		return $this->andWhere([Item::tableName() . '.visible' => 1]);
-	}
 
-	public function attached()
-	{
-		return $this->with('category')->andWhere([Category::tableName() . '.id' => 'IS NOT NULL']);
-	}
-
-	public function noattached()
-	{
-		return $this->with('category')->andWhere([Category::tableName() . '.id' => 'IS NULL']);
-	}*/
 
 }

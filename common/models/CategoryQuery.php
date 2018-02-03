@@ -14,14 +14,9 @@ class CategoryQuery extends ActiveQuery
 	// NestedSet Trait
 	use NestedSetsQueryTrait;
 
-	/**
-	 * @inheritdoc
-	 */
-	/*public function init()
+	public function visible()
 	{
-		parent::init();
-
 		return $this->andWhere([Category::tableName() . '.visible' => 1]);
-	}*/
+	}
 
 }

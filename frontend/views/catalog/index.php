@@ -1,19 +1,17 @@
 <?php
 
 use yii\helpers\Html;
+use common\widgets\CategoryTree\CategoryTree;
 
 /* @var $this yii\web\View */
-/* @var $model \common\models\Category */
+/* @var $model \common\models\Item */
 
-$this->title = 'Приводная техника';
 
 
 // Seo headers
-if ($model->seo){
-	$this->title = $model->seo->title;
-	$this->registerMetaTag(['name' => 'description', 'content' => $model->seo->description]);
-	$this->registerMetaTag(['name' => 'keywords', 'content' => $model->seo->keywords]);
-}
+$this->title = $model->meta_title;
+$this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
+$this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords]);
 
 ?>
 
@@ -36,14 +34,14 @@ catalog/index
 
 <? // todo: register script ?>
 <?// $this->registerJsFile('/js/jquery.columnizer.min.js') ?>
-<?
-	// todo: make widget
-	// $this->widget('application.extensions.category-tree.CategoryTreeWidget', [
-	// 	'type' => 'product-tree',
-	// 	'htmlOptions'=> [
-	// 		'id'=>'product-tree',
-	// 	],
-	// ]);
+<?=
+	CategoryTree::widget([
+		'view' => 'product-tree',
+		'htmlOptions' => [
+			'id' => 'product-tree',
+		],
+	]);
+
 ?>
 
 
