@@ -33,9 +33,6 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 	<? if (Yii::$app->controller->id !== 'catalog') : // выводить появляющееся меню продуктов если не открыт продукт (/catalog/view) или его список (/catalog/index) ?>
 
-		<? // todo: register script ?>
-		<?// Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/jquery.columnizer.min.js') ?>
-
 		<div id="products-list">
 			<div class="products-list-content">
 				<?= CategoryTree::widget() ?>

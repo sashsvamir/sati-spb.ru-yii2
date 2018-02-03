@@ -1,6 +1,7 @@
 <?php
 namespace common\widgets\CategoryTree;
 
+use frontend\assets\ColumnizerAsset\ColumnizerAsset;
 use Yii;
 use yii\base\Widget;
 use common\models\Category;
@@ -23,6 +24,8 @@ class CategoryTree extends Widget
 		// todo: сделать кэширование
 
 		$model = Category::find()->visible()->orderBy('lft')->all();
+
+		Yii::$app->view->registerAssetBundle(ColumnizerAsset::className());
 
 		return $this->render($this->view, [
 			'model' => $model,

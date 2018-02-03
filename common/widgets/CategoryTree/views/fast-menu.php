@@ -8,8 +8,6 @@ use yii\helpers\Url;
 /* @var $htmlOptions array */
 /* @var $item null|\common\models\Item */
 
-// todo: register script
-// $this->registerJsFile('/js/jquery.columnizer.min.js');
 ?>
 
 

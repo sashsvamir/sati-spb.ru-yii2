@@ -16,8 +16,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords
 ?>
 
 
-catalog/index
-
 
 <h1 align="center" style="margin: 1rem auto 4rem;">
 	<? // todo: fix link to admin ?>
@@ -32,8 +30,6 @@ catalog/index
 
 
 
-<? // todo: register script ?>
-<?// $this->registerJsFile('/js/jquery.columnizer.min.js') ?>
 <?=
 	CategoryTree::widget([
 		'view' => 'product-tree',
