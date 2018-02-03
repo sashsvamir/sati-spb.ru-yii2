@@ -44,7 +44,7 @@ use yii\helpers\Url;
 						echo '</li>';
 					}
 				}
-				echo '<li class="category-depth-' . ($category->depth - 1) . ' ' . ($category->isLeaf() ? 'leaf' : 'parent') . ' ' . ($category->item ? 'attached' : 'noattached') . '">';
+				echo '<li class="category-level-' . ($category->depth - 1) . ' ' . ($category->isLeaf() ? 'leaf' : 'parent') . ' ' . ($category->item ? 'attached' : 'noattached') . '">';
 
 					echo '<span class="name ' . ($item->id === $category->item->id ? 'active' : null) . '">';
 						echo ($category->item->url) ? '<a href="' . Url::to(['catalog/view', 'url' => $category->item->url]) . '">' : '';
