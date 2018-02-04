@@ -35,7 +35,9 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 		<div id="products-list">
 			<div class="products-list-content">
-				<?= CategoryTree::widget() ?>
+				<?= CategoryTree::widget([
+					'view' => 'index',
+				]) ?>
 			</div>
 		</div>
 

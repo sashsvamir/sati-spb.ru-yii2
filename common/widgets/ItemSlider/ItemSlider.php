@@ -1,6 +1,7 @@
 <?php
 namespace common\widgets\ItemSlider;
 
+use Yii;
 use yii\base\Widget;
 use common\models\Item;
 
@@ -10,6 +11,9 @@ use common\models\Item;
  */
 class ItemSlider extends Widget
 {
+	/** @var string */
+	public $cacheName = 'item-slider-cache';
+
 	/** @var array */
 	public $htmlOptions = [];
 
@@ -18,11 +22,9 @@ class ItemSlider extends Widget
 	 */
 	public function run()
 	{
-		$model = Item::find()->visible()->orderBy('priority ASC')->all();
-
-		if ($model === null) {
-			return false;
-		}
+		$model = Yii::$app->cache->getOrSet($this->cacheName, function () {
+			return Item::find()->visible()->with('image')->orderBy('priority ASC')->all();
+		}, Yii::$app->params['cacheTime']);
 
 		return $this->render('index', [
 			'model' => $model,

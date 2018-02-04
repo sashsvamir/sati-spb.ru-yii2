@@ -10,7 +10,7 @@ use common\widgets\ItemAttach\ItemAttach;
 
 
 // Seo headers
-$this->title = $model->meta_title;
+$this->title = Html::encode($model->meta_title);
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords]);
 
@@ -36,7 +36,9 @@ if ($category = $model->category) {
 
 // добавим в хлебн. крошки название текущей страницы
 // $this->breadcrumbs[] = $model->img->menu_title;
-$this->params['breadcrumbs'][] = $model->category ? $model->category->title : $model->header;
+$crumb = $model->category ? $model->category->title : $model->header;
+$crumb = strip_tags(str_replace('<br', '. <br', $crumb));
+$this->params['breadcrumbs'][] = $crumb;
 ?>
 
 

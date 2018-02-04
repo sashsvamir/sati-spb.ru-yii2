@@ -15,7 +15,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'Sati, приводн
 <!-- Slider -->
 <div id="slider">
 	<div class="container">
-		<? // todo: make widget ?>
 		<?= ItemSlider::widget([
 			'htmlOptions' => [
 				'class' => 'items',

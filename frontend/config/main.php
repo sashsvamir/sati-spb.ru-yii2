@@ -50,7 +50,13 @@ return [
             // 'enableStrictParsing' => true,
             // 'hostInfo' => 'http://sati-spb',
             'rules' => [
-	            'catalog' => 'catalog/index',
+            	[
+		            'pattern' => 'catalog',
+		            'route' => 'catalog/view',
+		            'defaults' => ['url' => 'index'],
+	            ],
+	            // 'catalog' => 'catalog/view',
+	            // 'catalog/<url:index>' => 'catalog/view',
 	            'catalog/<url>' => 'catalog/view',
 	            '<url:main.php>'=>'catalog/view', // redirect old urls
 
@@ -58,6 +64,9 @@ return [
 
 	            'sitemap' => 'sitemap/index',
 	            'sitemap.xml' => 'sitemap/xml',
+
+	            // todo: make search controller
+	            // todo: make feedback form
             ],
         ],
     ],

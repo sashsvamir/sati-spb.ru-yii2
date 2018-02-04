@@ -2,67 +2,108 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use yii\web\Controller;
 use common\models\Item;
-use common\models\Category;
-use yii\web\Response;
 
 
 /**
- * todo: add pages, main page to links (сделать стр. Приводная техника пунктом меню Главная, переименовать главная в "приводн техн", см. страницу где url=default)
  * Sitemap controller
  */
 class SitemapController extends Controller
 {
+	/** @var string cache name */
+	public $cacheName = 'sitemap_cache';
 
 	/**
-	 * todo: add Pages, all Items and categories
 	 * render /sitemap
 	 */
 	public function actionIndex()
 	{
-		$model = Item::find()->select(['item.header', 'item.url', 'item.meta_title', 'img.menu_title', 'item.category_id'])
-			->leftJoin('img', 'img.item_id = item.id')
-			->orderBy('item.visible DESC')
-			->addOrderBy('item.priority')
-			->where('item.url <> ""')
-			->where('item.url IS NOT NULL')
-			->asArray()
-			->all();
-
 		return $this->render('sitemap', [
-			'model' => $model,
+			'model' => $this->getSitemap(),
 		]);
 	}
 
 	/**
-	 * todo: add Pages, all Items and categories
 	 * render /sitemap.xml
 	 */
 	public function actionXml()
 	{
-		$cacheName = 'sitemap-xml';
+		$xml = $this->renderPartial('sitemap_xml', [
+			'model' => $this->getSitemap(),
+		]);
 
-		// проверяем есть ли закэшированная версия sitemap
-		if (!$xml = Yii::$app->cache->get($cacheName)) {
-
-			$model = Category::find()->select(['category.id', 'category.lft', 'item.url', 'item.updated'])
-				->leftJoin('item', 'item.category_id = category.id')
-				->where(['category.visible' => 1])
-				->orderBy('category.lft')
-				->asArray()
-				->all();
-
-			$xml = $this->renderPartial('sitemap_xml', [
-				'model' => $model,
-			]);
-
-			// кэшируем результат
-			Yii::$app->cache->set($cacheName, $xml, 60*5);
+		if (!headers_sent()) {
+			header("Content-type: text/xml; charset=utf-8");
 		}
+		echo trim($xml);
+		exit();
+	}
 
-		Yii::$app->response->format = Response::FORMAT_XML;
-		echo $xml;
+	/**
+	 * @return array of all available site's pages
+	 */
+	private function getSitemap() : array
+	{
+		// check cached sitemap
+		if (!$chunk = Yii::$app->cache->get($this->cacheName)) {
+			// get all available pages
+			$chunk = array_merge($this->getItems(), $this->getPages());
+			// save cache on 15 min
+			Yii::$app->cache->set($this->cacheName, $chunk, Yii::$app->params['cacheTime']);
+		}
+		return $chunk;
+	}
+
+	/**
+	 * @return array of available categories and items
+	 */
+	private function getItems() : array
+	{
+		$model = Item::find()
+			->select(['item.header', 'item.url', 'item.visible', 'item.priority', 'item.updated as updated_at', 'category.lft', 'img.menu_title'])
+			->leftJoin('img', 'img.item_id = item.id')
+			->leftJoin('category', 'category.id = item.category_id')
+			->andWhere('item.url <> "" AND item.url IS NOT NULL')
+			->orderBy(['IF (category.lft = "" OR category.lft IS NULL, 1, 0), category.lft' => SORT_ASC])
+			->addOrderBy('item.visible DESC')
+			->addOrderBy(['IF (item.priority = "" OR item.priority IS NULL, 1, 0), item.priority' => SORT_ASC])
+			->asArray()
+			->all();
+
+		// create urls
+		array_walk($model, function (&$arr) {
+			$arr['url'] = Url::to(['catalog/view' , 'url' => $arr['url']], true);
+		});
+
+		return $model;
+	}
+
+	/**
+	 * @return array of available another pages
+	 */
+	private function getPages() : array
+	{
+		return [
+			[
+				'header' => 'О компании',
+				'url' => Url::to(['site/page', 'view' => 'about'], true),
+			],
+			[
+				'header' => 'Контакты',
+				'url' => Url::to(['site/page', 'view' => 'contacts'], true),
+			],
+			[
+				'header' => 'Спец. предложение',
+				'url' => Url::to(['site/page', 'view' => 'spec'], true),
+			],
+			[
+				'header' => 'Карта сайта',
+				'url' => Url::to(['sitemap/index'], true),
+			],
+
+		];
 	}
 
 

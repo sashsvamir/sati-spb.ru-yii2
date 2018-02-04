@@ -1,11 +1,11 @@
 <?php
 
-/* @var $this \yii\web\View */
 use yii\helpers\Html;
-use yii\helpers\Url;
 
-
+/* @var $this \yii\web\View */
 /* @var $model array */
+
+
 
 
 $this->title = 'Карта сайта';
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = 'Карта сайта';
 	<ul>
 		<? foreach ($model as $data) : ?>
 			<li>
-				<a href="<?= Url::to(['catalog/view', 'url' => $data['url']]) ?>" title="<?= Html::encode($data['meta_title']) ?>"><?= isset($data['menu_title']) ? Html::encode($data['menu_title']) : $data['header'] ?></a>
+				<a href="<?= $data['url'] ?>" title="<?= Html::encode($data['meta_title']) ?>"><?= isset($data['menu_title']) ? $data['menu_title'] : $data['header'] ?></a>
 			</li>
 		<? endforeach ?>
 	</ul>

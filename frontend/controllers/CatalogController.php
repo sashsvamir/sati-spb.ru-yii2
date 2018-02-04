@@ -21,7 +21,7 @@ class CatalogController extends Controller
      */
     public function actionIndex()
     {
-	    $model = $this->findModel('default');
+	    $model = $this->findModel('index');
 
 	    $this->current_item = $model;
 
@@ -35,6 +35,11 @@ class CatalogController extends Controller
 	 */
     public function actionView($url)
     {
+    	if ($url === 'index') {
+		    $this->action->id = 'index'; // change action id
+    		return $this->actionIndex();
+	    }
+
     	// проверим надо ли делать редирект со старого адреса
 	    if ($redirect = $this->redirectOldLink()) {
 	    	return $redirect;

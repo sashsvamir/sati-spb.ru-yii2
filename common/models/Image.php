@@ -5,6 +5,7 @@ use yii\db\ActiveRecord;
 
 
 /**
+ * // todo: make Image as behavior for Category and Item. Also this behavior should be store parent filepath to uploading images
  * @property int $id
  * @property string $filename
  * @property string $alt

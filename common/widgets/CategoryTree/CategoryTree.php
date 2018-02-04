@@ -1,15 +1,18 @@
 <?php
 namespace common\widgets\CategoryTree;
 
-use frontend\assets\ColumnizerAsset\ColumnizerAsset;
 use Yii;
 use yii\base\Widget;
+use frontend\assets\ColumnizerAsset\ColumnizerAsset;
 use common\models\Category;
 use common\models\Item;
 
 
 class CategoryTree extends Widget
 {
+	/** @var string */
+	public $cacheName = 'category-tree-cache';
+
 	/** @var string name of rendered view */
 	public $view = 'index';
 
@@ -21,9 +24,9 @@ class CategoryTree extends Widget
 	 */
 	public function run()
 	{
-		// todo: сделать кэширование
-
-		$model = Category::find()->visible()->orderBy('lft')->all();
+		$model = Yii::$app->cache->getOrSet($this->cacheName, function () {
+			return Category::find()->visible()->with('image', 'item')->orderBy('lft')->andWhere('category.depth > 1')->all();
+		}, Yii::$app->params['cacheTime']);
 
 		Yii::$app->view->registerAssetBundle(ColumnizerAsset::className());
 
