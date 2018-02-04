@@ -24,7 +24,7 @@ use yii\db\ActiveRecord;
  * @property UrlOld $urlOld
  * @property Category $category
  * @property Attach $attach
- * @property Image $image
+ * @property ImageItem $image
  */
 class Item extends ActiveRecord
 {
@@ -73,7 +73,7 @@ class Item extends ActiveRecord
 	 */
 	public function getImage()
 	{
-		return $this->hasOne(Image::className(), ['id' => 'image_id']);
+		return $this->hasOne(ImageItem::className(), ['id' => 'image_id']);
 	}
 
 

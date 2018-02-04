@@ -16,7 +16,7 @@ use yii\db\ActiveRecord;
  * @property int $visible
  *
  * @property Item $item
- * @property Image $image
+ * @property ImageCategory $image
  *
  * @mixin NestedSetsBehavior
  * @mixin NestedSetsQueryTrait
@@ -72,7 +72,7 @@ class Category extends ActiveRecord
 	 */
 	public function getImage()
 	{
-		return $this->hasOne(Image::className(), ['id' => 'image_id']);
+		return $this->hasOne(ImageCategory::className(), ['id' => 'image_id']);
 	}
 
 }

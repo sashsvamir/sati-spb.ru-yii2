@@ -2,10 +2,10 @@
 namespace common\models;
 
 use yii\db\ActiveRecord;
+use yii\base\InvalidConfigException;
 
 
 /**
- * // todo: make Image as behavior for Category and Item. Also this behavior should be store parent filepath to uploading images
  * @property int $id
  * @property string $filename
  * @property string $alt
@@ -16,6 +16,9 @@ use yii\db\ActiveRecord;
  */
 class Image extends ActiveRecord
 {
+	/** @var string path to uploading images */
+	public $filepath = null;
+
 	/**
 	 * @inheritdoc
 	 */
@@ -25,35 +28,23 @@ class Image extends ActiveRecord
 	}
 
 	/**
-	 * @return \yii\db\ActiveQuery
+	 * @inheritdoc
 	 */
-	public function getCategory()
+	public function init()
 	{
-		return $this->hasOne(Category::className(), ['image_id' => 'id']);
-	}
+		parent::init();
 
-	/**
-	 * @return \yii\db\ActiveQuery
-	 */
-	public function getItem()
-	{
-		return $this->hasOne(Item::className(), ['image_id' => 'id']);
+		if ($this->filepath === null) {
+			throw new InvalidConfigException('You must extend Image class and set "filepath" property before using this class.');
+		}
 	}
 
 	/**
 	 *	Берем относительный путь до директории хранения картинок
 	 */
-	public function getFilePathRelative($relationModel = null)
+	public function getFilePathRelative()
 	{
-		if($relationModel === 'Category' || $this->category) {
-			$filepath = '/../img/category/';
-		} elseif($relationModel === 'Item' || $this->item) {
-			$filepath = '/../img/item/';
-		} else {
-			$filepath = '/../upload/';
-		}
-
-		return $filepath;
+		return $this->filepath;
 	}
 
 }
