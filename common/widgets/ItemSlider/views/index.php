@@ -1,5 +1,7 @@
 <?php
 
+// Rendered on / (intro) page as slider
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 

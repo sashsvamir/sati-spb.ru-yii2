@@ -1,4 +1,6 @@
-<?
+<?php
+
+// Rendered on /catalog/* pages as top menu
 
 use yii\helpers\Html;
 use yii\helpers\Url;

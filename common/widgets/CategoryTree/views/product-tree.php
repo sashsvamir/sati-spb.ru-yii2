@@ -1,5 +1,7 @@
 <?php
 
+// Rendered only on /catalog page
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 

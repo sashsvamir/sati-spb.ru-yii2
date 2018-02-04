@@ -1,5 +1,7 @@
 <?php
 
+// Rendered on /page/* pages as top menu
+
 use yii\helpers\Html;
 use yii\helpers\Url;
 
