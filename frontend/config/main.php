@@ -65,7 +65,6 @@ return [
 	            'sitemap' => 'sitemap/index',
 	            'sitemap.xml' => 'sitemap/xml',
 
-	            // todo: make search controller
 	            // todo: make feedback form
             ],
         ],
