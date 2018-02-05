@@ -16,3 +16,7 @@ a {
 
 img {
   border: 0; }
+
+#wrap ul {
+  display: inline-block;
+  width: 100%; }
