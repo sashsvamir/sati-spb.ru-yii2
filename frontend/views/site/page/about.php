@@ -3,6 +3,8 @@
 
 	// Seo headers
 	$this->title = 'О компании';
+	$this->registerMetaTag(['name' => 'description', 'content' => 'О компании']);
+	$this->registerMetaTag(['name' => 'keywords', 'content' => 'компания']);
 
 	// Create breadcrumbs
 	$this->params['breadcrumbs'][] = 'О компании';

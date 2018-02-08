@@ -3,6 +3,8 @@
 
 	// Seo headers
 	$this->title = 'Контакты';
+	$this->registerMetaTag(['name' => 'description', 'content' => 'Контакты компании']);
+	$this->registerMetaTag(['name' => 'keywords', 'content' => 'контакты, телефон']);
 
 	// Create breadcrumbs
 	$this->params['breadcrumbs'][] = 'Контакты';
