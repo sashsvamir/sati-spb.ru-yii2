@@ -1,0 +1,8 @@
+{
+	"comments": false,
+//	"minified": true,
+	"presets": [
+		["env"/*, { "modules": false }*/],
+	],
+	//	"plugins": ["transform-es2015-modules-amd"]
+}

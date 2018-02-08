@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "93c1a9444517f00428141efd723b15d6",
+    "content-hash": "5b713dad32413e6647e3980e768fe0fd",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -84,6 +84,25 @@
                 "shasum": null
             },
             "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/tingle",
+            "version": "v0.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robinparisi/tingle.git",
+                "reference": "4b4ab8c51f580ec0ec044da908acc29a042f70ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robinparisi/tingle/zipball/4b4ab8c51f580ec0ec044da908acc29a042f70ba",
+                "reference": "4b4ab8c51f580ec0ec044da908acc29a042f70ba",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "bower-asset/yii2-pjax",
@@ -373,6 +392,45 @@
                 "yii2"
             ],
             "time": "2016-10-13T22:34:19+00:00"
+        },
+        {
+            "name": "sashsvamir/yii2-tingle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sashsvamir/yii2-tingle.git",
+                "reference": "68fa4392c7862795136fc31ed20b80ce582b3094"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sashsvamir/yii2-tingle/zipball/68fa4392c7862795136fc31ed20b80ce582b3094",
+                "reference": "68fa4392c7862795136fc31ed20b80ce582b3094",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/tingle": "~0.12.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "sashsvamir\\tingle\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Shchukin",
+                    "email": "alexander@shykin.ru"
+                }
+            ],
+            "description": "js modal",
+            "support": {
+                "source": "https://github.com/sashsvamir/yii2-tingle/tree/master",
+                "issues": "https://github.com/sashsvamir/yii2-tingle/issues"
+            },
+            "time": "2017-12-11T16:11:23+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3189,7 +3247,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "sashsvamir/yii2-tingle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

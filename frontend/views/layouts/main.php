@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
+use common\widgets\FeedbackFormWidget\FeedbackFormWidget;
 
 AppAsset::register($this);
 ?>
@@ -27,7 +28,12 @@ AppAsset::register($this);
 <body>
 <? $this->beginBody() ?>
 
-
+	<?= FeedbackFormWidget::widget([
+		'offsetTarget' => '#menu',
+		'urlProd' => 'https://intermehanika.ru/feedback/frame/index',
+		'urlDev' => 'http://shop/feedback/frame/index',
+		'referer' => 'sati',
+	]) ?>
 
 	<?= $content ?>
 

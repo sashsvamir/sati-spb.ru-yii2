@@ -18,7 +18,8 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "paulzi/yii2-nested-sets": "^1.0"
+        "paulzi/yii2-nested-sets": "^1.0",
+        "sashsvamir/yii2-tingle": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -34,6 +35,7 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
-        }
+        },
+        {"type": "vcs", "url": "https://github.com/sashsvamir/yii2-tingle"}
     ]
 }

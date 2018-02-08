@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/**
+ *  Button feedback
+ */
+.modal-feedback-control {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 30px;
+  z-index: 99;
+  background: #0067e0;
+  border-radius: 1px 20px 1px 20px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  transition: background-color 150ms ease-out, box-shadow 250ms ease-out; }
+  .modal-feedback-control:hover {
+    background: #0057bc !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+  .modal-feedback-control .button {
+    position: relative;
+    display: block;
+    height: 100%;
+    cursor: pointer;
+    padding: 8px 50px 8px 30px;
+    color: #fff;
+    font-size: 1.05rem;
+    white-space: nowrap; }
+    .modal-feedback-control .button:before {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 2px;
+      background: url("icon-feedback-red.png") no-repeat;
+      width: 25px;
+      height: 27px; }
+
+/**
+ *  Feedback Modal (tingle)
+ */
+.tingle-modal-box {
+  max-width: 680px;
+  margin: auto; }
+  .tingle-modal-box .tingle-modal-box__content {
+    padding-top: 30px; }
+    .tingle-modal-box .tingle-modal-box__content .frame-wrapper iframe.frame-feedback {
+      position: relative;
+      width: 100%;
+      border: none;
+      min-height: 600px; }
+    .tingle-modal-box .tingle-modal-box__content .frame-wrapper.ajax-loading:after {
+      content: "Загрузка";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.85) url(spinner.gif) no-repeat center;
+      background-size: 36px;
+      text-align: center;
+      line-height: 10;
+      font-size: 2rem;
+      font-weight: 300;
+      color: #5c78c9; }
+
+@media screen and (max-width: 880px) {
+  .modal-feedback-form {
+    -webkit-overflow-scrolling: touch !important; }
+    .modal-feedback-form .tingle-modal__close {
+      background: #0067e0; }
+      .modal-feedback-form .tingle-modal__close .tingle-modal__closeIcon {
+        font-size: 2.8rem; }
+      .modal-feedback-form .tingle-modal__close .tingle-modal__closeLabel {
+        font-size: 0.8rem; } }
