@@ -62,7 +62,7 @@ class SitemapController extends Controller
 	private function getItems() : array
 	{
 		$model = Item::find()
-			->select(['item.header', 'item.url', 'item.visible', 'item.priority', 'item.updated as updated_at', 'category.lft', 'img.menu_title'])
+			->select(['item.header', 'item.url', 'item.visible', 'item.meta_title', 'item.priority', 'item.updated as updated_at', 'category.lft', 'img.menu_title'])
 			->leftJoin('img', 'img.item_id = item.id')
 			->leftJoin('category', 'category.id = item.category_id')
 			->andWhere('item.url <> "" AND item.url IS NOT NULL')
