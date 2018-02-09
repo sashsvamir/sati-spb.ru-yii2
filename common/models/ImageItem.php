@@ -7,6 +7,6 @@ class ImageItem extends Image
 	/*
 	 * @inheritdoc
 	 */
-	public $filepath = '/../img/item/';
+	public $filepath = '/img/item/';
 
 }

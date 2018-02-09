@@ -76,7 +76,7 @@ use yii\helpers\Url;
 				echo '<li class="' . ($item->category->id === $category->id  || $category->id === $current_root->id ? 'active' : null) . '">';
 
 					echo '<a href="' . Url::to(['catalog/view', 'url' => $category->item->url]) . '">';
-						echo Html::img('/img/category/' . $category->image->filename, ['valign' => 'middle', 'width' => '46', 'height' => '46']);
+						echo Html::img($category->image->getUrl(), ['valign' => 'middle', 'width' => '46', 'height' => '46']);
 						echo '<span>' . Html::encode($category->title) . '</span>';
 					echo '</a>';
 

@@ -16,8 +16,8 @@ use yii\base\InvalidConfigException;
  */
 class Image extends ActiveRecord
 {
-	/** @var string path to uploading images */
-	public $filepath = null;
+	/** @var string path to uploading images (with slash at end) */
+	public $filepath;
 
 	/**
 	 * @inheritdoc
@@ -45,6 +45,17 @@ class Image extends ActiveRecord
 	public function getFilePathRelative()
 	{
 		return $this->filepath;
+	}
+
+	/**
+	 *	Берем url картинки
+	 */
+	public function getUrl() : ?string
+	{
+		if (!$this->isNewRecord) {
+			return $this->getFilePathRelative() . $this->filename;
+		}
+		return null;
 	}
 
 }

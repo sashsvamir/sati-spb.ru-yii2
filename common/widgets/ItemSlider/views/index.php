@@ -21,7 +21,7 @@ use yii\helpers\Url;
 
 			<li class="product-<?= $item->id ?>">
 				<a href="<?= Url::to(['catalog/view', 'url' => $item->url]) ?>">
-					<img alt="<?= Html::encode($item->image->alt) ?>" src="<?= $item->image->getFilePathRelative() . $item->image->filename ?>" />
+					<img alt="<?= Html::encode($item->image->alt) ?>" src="<?= $item->image->getUrl() ?>" />
 					<span class="description"><?= Html::encode($item->image->title) ?></span>
 				</a>
 			</li>
