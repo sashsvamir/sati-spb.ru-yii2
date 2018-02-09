@@ -11,7 +11,8 @@ use common\widgets\ItemAttach\ItemAttach;
 
 // Seo headers
 $this->title = Html::encode($model->meta_title);
-$this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
+// todo: remove using category desciprion (using item->meta_description instead only)
+$this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description ? : $model->category->description]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords]);
 
 
