@@ -14,6 +14,7 @@ use yii\db\ActiveRecord;
  * @property string $title
  * @property string $description
  * @property int $visible
+ * @property int $image_id
  *
  * @property Item $item
  * @property ImageCategory $image

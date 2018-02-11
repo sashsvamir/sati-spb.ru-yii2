@@ -10,9 +10,6 @@ use yii\base\InvalidConfigException;
  * @property string $filename
  * @property string $alt
  * @property string $title
- *
- * @property Category $category
- * @property Item $item
  */
 class Image extends ActiveRecord
 {

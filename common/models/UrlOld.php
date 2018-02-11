@@ -4,6 +4,11 @@ namespace common\models;
 use yii\db\ActiveRecord;
 
 
+/**
+ * @property int $id
+ * @property string $url
+ * @property int $item_id
+ */
 class UrlOld extends ActiveRecord
 {
 	/**
