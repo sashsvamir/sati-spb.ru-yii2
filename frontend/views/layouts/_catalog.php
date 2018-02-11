@@ -73,10 +73,6 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 
 			<? if (isset($this->params['breadcrumbs'])) {
 				echo Breadcrumbs::widget([
-					'homeLink' => [
-						'label' => 'Главная',
-						'url' => '/',
-					],
 					'encodeLabels' => false,
 					'links' => $this->params['breadcrumbs'],
 				]);
