@@ -23,7 +23,14 @@ class ItemSlider extends Widget
 	public function run()
 	{
 		$model = Yii::$app->cache->getOrSet($this->cacheName, function () {
-			return Item::find()->visible()->with('image')->orderBy('priority ASC')->all();
+			// get visible items only with images
+			return Item::find()
+				->visible()
+				->andWhere('item.image_id <> ""')
+				->orWhere('item.image_id IS NOT NULL')
+				->with('image')
+				->orderBy('priority ASC')
+				->all();
 		}, Yii::$app->params['cacheTime']);
 
 		return $this->render('index', [
