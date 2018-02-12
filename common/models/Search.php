@@ -41,7 +41,7 @@ class Search extends Model
 
 		// create class
 		if ($this->model === null || !class_exists($this->model)) {
-			throw new InvalidConfigException('You must extend Image class and set "filepath" property before using this class.');
+			throw new InvalidConfigException('You must set "model" property before using this class.');
 		}
 		$this->_model = new $this->model();
 	}

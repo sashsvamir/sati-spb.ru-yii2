@@ -7,6 +7,6 @@ class ImageCategory extends Image
 	/*
 	 * @inheritdoc
 	 */
-	public $filepath = '/img/category/';
+	public $dirPath = '/img/category/';
 
 }

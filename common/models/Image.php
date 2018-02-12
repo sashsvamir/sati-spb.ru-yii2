@@ -3,6 +3,7 @@ namespace common\models;
 
 use yii\db\ActiveRecord;
 use yii\base\InvalidConfigException;
+use Yii;
 
 
 /**
@@ -13,8 +14,8 @@ use yii\base\InvalidConfigException;
  */
 class Image extends ActiveRecord
 {
-	/** @var string path to uploading images (with slash at end) */
-	public $filepath;
+	/** @var string path to uploading images (with slash at begin and end) */
+	public $dirPath;
 
 	/**
 	 * @inheritdoc
@@ -31,17 +32,25 @@ class Image extends ActiveRecord
 	{
 		parent::init();
 
-		if ($this->filepath === null) {
-			throw new InvalidConfigException('You must extend Image class and set "filepath" property before using this class.');
+		if ($this->dirPath === null) {
+			throw new InvalidConfigException('You must extend Image class and set "dirPath" property before using this class.');
 		}
+	}
+
+	/**
+	 *	Берем точный путь до директории хранения файлов
+	 */
+	public function getDirAbsolute()
+	{
+		return Yii::getAlias('@webroot') . $this->dirPath;
 	}
 
 	/**
 	 *	Берем относительный путь до директории хранения картинок
 	 */
-	public function getFilePathRelative()
+	public function getDirRelative()
 	{
-		return $this->filepath;
+		return Yii::getAlias('@web') . $this->dirPath;
 	}
 
 	/**
@@ -50,7 +59,7 @@ class Image extends ActiveRecord
 	public function getUrl() : ?string
 	{
 		if (!$this->isNewRecord) {
-			return $this->getFilePathRelative() . $this->filename;
+			return $this->getDirRelative() . $this->filename;
 		}
 		return null;
 	}

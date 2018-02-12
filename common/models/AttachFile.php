@@ -2,6 +2,7 @@
 namespace common\models;
 
 use yii\db\ActiveRecord;
+use Yii;
 
 
 /**
@@ -25,11 +26,19 @@ class AttachFile extends ActiveRecord
 	}
 
 	/**
+	 *	Берем точный путь до директории хранения файлов
+	 */
+	public function getDirAbsolute()
+	{
+		return Yii::getAlias('@webroot'). $this->dirPath . $this->attach_id . '/';
+	}
+
+	/**
 	 *	Берем относительный путь до директории хранения файлов
 	 */
 	public function getDirRelative()
 	{
-		return $this->dirPath . $this->attach_id . '/';
+		return Yii::getAlias('@web') . $this->dirPath . $this->attach_id . '/';
 	}
 
 	/**
