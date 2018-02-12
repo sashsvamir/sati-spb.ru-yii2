@@ -14,6 +14,7 @@ use yii\db\ActiveRecord;
  * @property string $meta_title
  * @property string $meta_description
  * @property string $meta_keywords
+ * @property string $sitemap_title
  * @property int $visible
  * @property int $category_id
  * @property int $image_id
