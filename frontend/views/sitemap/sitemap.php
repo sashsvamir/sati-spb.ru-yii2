@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = 'Карта сайта';
 	<ul>
 		<? foreach ($model as $data) : ?>
 			<li>
-				<a href="<?= $data['url'] ?>" title="<?= Html::encode($data['meta_title']) ?>"><?= isset($data['menu_title']) ? $data['menu_title'] : $data['header'] ?></a>
+				<a href="<?= $data['url'] ?>" title="<?= Html::encode($data['meta_title']) ?>"><?= isset($data['sitemap_title']) ? $data['sitemap_title'] : $data['header'] ?></a>
 			</li>
 		<? endforeach ?>
 	</ul>
