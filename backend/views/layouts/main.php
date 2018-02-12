@@ -36,7 +36,12 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+	    ['label' => 'Home', 'url' => ['/site/index']],
+	    ['label' => 'Category', 'url' => ['/category/index']],
+	    ['label' => 'Item', 'url' => ['/item/index']],
+	    // ['label' => 'Image', 'url' => ['/image/index']],
+	    '<p class="navbar-text" style="color:#474747;">Image</p>',
+	    ['label' => 'Attach', 'url' => ['/attach/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];

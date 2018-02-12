@@ -1,0 +1,23 @@
+<?php
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $model \backend\models\Attach */
+
+
+
+$this->title = 'Update Attach #' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Attach', 'url' => ['index']];
+$this->params['breadcrumbs'][] = 'Update';
+?>
+
+
+<div class="attach-update">
+
+	<h1><?= Html::encode($this->title) ?></h1>
+
+	<?= $this->render('_form', [
+		'model' => $model,
+	]) ?>
+
+</div>

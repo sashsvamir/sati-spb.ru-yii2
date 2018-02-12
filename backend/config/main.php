@@ -13,6 +13,18 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
+	    'i18n' => [
+		    'translations' => [
+			    'vendor*' => [
+				    'class' => 'yii\i18n\PhpMessageSource',
+				    'sourceLanguage' => 'en-US',
+				    'basePath' => '@backend/translates',
+				    'fileMap' => [
+					    'vendor/voskobovich/yii2-tree-manager/widgets/nestable' => 'yii2-tree-manager.php',
+				    ],
+			    ],
+		    ],
+	    ],
 	    'assetManager' => [
 		    'class' => 'yii\web\AssetManager',
 		    'linkAssets' => true,
@@ -42,14 +54,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+	            '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
+	            '<_c:[\w\-]+>' => '<_c>/index',
+	            '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];

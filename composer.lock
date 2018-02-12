@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b713dad32413e6647e3980e768fe0fd",
+    "content-hash": "ce83f1f7992b32c915602c6ca044d7ee",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -486,6 +486,57 @@
                 "mailer"
             ],
             "time": "2017-09-30T22:39:41+00:00"
+        },
+        {
+            "name": "voskobovich/yii2-tree-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voskobovich/yii2-tree-manager.git",
+                "reference": "6c0850f96c280fb2f39ea709c283a9b07dbb40fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voskobovich/yii2-tree-manager/zipball/6c0850f96c280fb2f39ea709c283a9b07dbb40fa",
+                "reference": "6c0850f96c280fb2f39ea709c283a9b07dbb40fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "^2.0.0",
+                "yiisoft/yii2-bootstrap": "^2.0.0"
+            },
+            "type": "yii2-widget",
+            "autoload": {
+                "psr-4": {
+                    "voskobovich\\tree\\manager\\actions\\": "src/actions",
+                    "voskobovich\\tree\\manager\\behaviors\\": "src/behaviors",
+                    "voskobovich\\tree\\manager\\forms\\": "src/forms",
+                    "voskobovich\\tree\\manager\\interfaces\\": "src/interfaces",
+                    "voskobovich\\tree\\manager\\widgets\\nestable\\": "src/widgets/nestable"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitaly Voskobovich",
+                    "email": "vitaly@voskobovich.com",
+                    "homepage": "http://voskobovich.com"
+                }
+            ],
+            "description": "Tree Manager using jquery.nestable plugin for Yii 2",
+            "homepage": "https://github.com/voskobovich/yii2-tree-manager",
+            "keywords": [
+                "editor",
+                "nestable",
+                "nested sets",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-02-09T14:54:08+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -3248,7 +3299,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sashsvamir/yii2-tingle": 20
+        "sashsvamir/yii2-tingle": 20,
+        "voskobovich/yii2-tree-manager": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
