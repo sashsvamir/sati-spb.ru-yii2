@@ -1,7 +1,6 @@
 <?
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model \common\models\Attach */
@@ -18,7 +17,7 @@ use yii\helpers\Url;
 				<tr>
 					<td><?= $file->description ?></td>
 					<? $description = strip_tags(str_replace( '<br', ', <br', $file->description)); ?>
-					<td><a href="/download/<?= $file->attach_id ?>/<?= $file->filename ?>" alt="<?= $file->alt ?>" title="<?= $description ?>">Скачать pdf</td>
+					<td><a href="<?= $file->getUrl() ?>" alt="<?= Html::encode($file->alt) ?>" title="<?= $description ?>">Скачать pdf</td>
 				</tr>
 			<? endforeach ?>
 
