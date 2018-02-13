@@ -12,5 +12,10 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
         ],
+        'reCaptcha' => [
+	        // !!! insert a google captcha keys:
+	        'siteKey' => '',
+	        'secret' => '',
+        ],
     ],
 ];

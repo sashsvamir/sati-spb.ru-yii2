@@ -11,5 +11,11 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'reCaptcha' => [
+	        'name' => 'reCaptcha',
+	        'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+	        // 'siteKey' => '',
+	        // 'secret' => '',
+        ],
     ],
 ];

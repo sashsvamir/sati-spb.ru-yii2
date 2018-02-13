@@ -16,5 +16,9 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
+        'reCaptcha' => [
+	        'siteKey' => '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', // pass test key
+	        'secret' => '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe', // pass test key
+        ],
     ],
 ];
