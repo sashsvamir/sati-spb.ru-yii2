@@ -14,14 +14,16 @@ $this->title = $name;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        Сожалеем, но произошла ошибка: <b><?= nl2br(Html::encode($message)) ?></b>
     </div>
 
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
+	<br>
+
+	<p>Если не удается найти необходимый материал, попробуйте связаться с нами по любому из доступных каналов связи, мы постараемся вам помочь:</p>
+	<ul>
+		<li><a href="<?= Yii::$app->params['feedback'] ?>">Фома для связи</a></li>
+		<li class="phones"><span class="phone"><?= implode('</span><br /><span class="phone">', Yii::$app->params['phones']) ?></span></li>
+		<li>E-mail: <a href="mailto:info@intermehanika.ru">info@intermehanika.ru</a></li>
+	</ul>
 
 </div>
