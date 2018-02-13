@@ -20,10 +20,10 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "paulzi/yii2-nested-sets": "^1.0",
         "sashsvamir/yii2-tingle": "dev-master",
-        "voskobovich/yii2-tree-manager": "dev-master"
+        "voskobovich/yii2-tree-manager": "dev-master",
+        "yiisoft/yii2-debug": "~2.0.0"
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
         "codeception/base": "^2.2.3",

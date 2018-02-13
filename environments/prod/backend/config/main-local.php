@@ -1,5 +1,5 @@
 <?php
-return [
+$config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -7,3 +7,13 @@ return [
         ],
     ],
 ];
+
+if (YII_DEBUG && !YII_ENV_TEST) {
+	// configuration adjustments for 'debug' mode
+	$config['bootstrap'][] = 'debug';
+	$config['modules']['debug'] = [
+		'class' => 'yii\debug\Module',
+	];
+}
+
+return $config;
