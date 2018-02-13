@@ -4,10 +4,12 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use frontend\assets\AppAsset;
 use common\widgets\FeedbackFormWidget\FeedbackFormWidget;
 
 AppAsset::register($this);
+$this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 ?>
 <? $this->beginPage() ?>
 <!DOCTYPE html>
