@@ -185,6 +185,11 @@ a.scrollTop {
 @media screen and (max-width: 1100px) {
   #fast-menu > ul.native-columns li a img {
     margin-right: 0.2rem; } }
+#fast-menu .native-columns {
+  column-count: 4;
+  -webkit-column-count: 4;
+  -moz-column-count: 4; }
+
 /*	Категории на странице продуктов
  */
 #product-tree {

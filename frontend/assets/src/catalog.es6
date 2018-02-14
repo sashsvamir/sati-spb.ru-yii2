@@ -137,6 +137,12 @@ $(document).ready(function() {
 		// $('#fast-menu').find('.subcategories').hide();
 
 		$('#fast-menu').find('ul.native-columns >li').addClass('dontsplit');
+		$('#fast-menu').find('ul.native-columns').css({
+			// удалим css значения которые фиксят дерганье верстки при загрузке (см. catalog.sass)
+			'column-count': 'auto',
+			'-webkit-column-count': 'auto',
+			'-moz-column-count': 'auto',
+		});
 		$('#fast-menu').find('ul.native-columns').columnize({
 			width: 250,
 			// columns : 4,

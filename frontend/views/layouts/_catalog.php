@@ -21,7 +21,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
 			<li class="products<?= Yii::$app->controller->id === 'catalog' ? ' active' : null ?>"><a href="/catalog">Приводная техника</a></li>
 			<li class="contacts dropdown"><a href="/page/contacts">Контакты</a></li>
 			<li class="feedback"><a href="<?= Yii::$app->params['feedback'] ?>">Запрос товара</a></li>
-			<li class="search">
+			<li class="search unfocused">
 				<form action="/search" method="GET">
 					<input id="search" name="query" type="text" placeholder="Поиск..." autocomplete="off" />
 					<input type="submit" value="Найти" />
