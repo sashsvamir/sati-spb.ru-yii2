@@ -25,7 +25,7 @@ class Attach extends ActiveRecord
 	 */
 	public function getFiles()
 	{
-		return $this->hasMany(AttachFile::className(), ['attach_id' => 'id']);
+		return $this->hasMany(AttachFile::class, ['attach_id' => 'id']);
 	}
 
 

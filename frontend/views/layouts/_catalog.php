@@ -7,7 +7,7 @@ use yii\widgets\Breadcrumbs;
 use common\widgets\CategoryTree\CategoryTree;
 
 
-$this->registerAssetBundle(\frontend\assets\CatalogAsset::className());
+$this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 
 ?>
 

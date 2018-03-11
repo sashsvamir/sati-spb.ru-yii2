@@ -19,7 +19,7 @@ class CategoryController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
+                'class' => AccessControl::class,
                 'rules' => [
                     [
                         'allow' => true,
@@ -28,7 +28,7 @@ class CategoryController extends Controller
                 ],
             ],
             // 'verbs' => [
-            //     'class' => VerbFilter::className(),
+            //     'class' => VerbFilter::class,
             //     'actions' => [
             //         'logout' => ['post'],
             //     ],

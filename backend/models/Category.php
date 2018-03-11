@@ -20,7 +20,7 @@ class Category extends \common\models\Category
 			[['title', 'description'], 'string', 'max' => 255],
 			[['visible'], 'boolean'],
 
-			[['itemId'], 'exist', 'targetClass' => Item::className(), 'targetAttribute' => 'id'],
+			[['itemId'], 'exist', 'targetClass' => Item::class, 'targetAttribute' => 'id'],
 		];
 	}
 

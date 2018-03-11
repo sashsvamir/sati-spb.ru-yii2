@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-	            <?= $form->field($model, 'reCaptcha')->widget(ReCaptcha::className())->label(false) ?>
+	            <?= $form->field($model, 'reCaptcha')->widget(ReCaptcha::class)->label(false) ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

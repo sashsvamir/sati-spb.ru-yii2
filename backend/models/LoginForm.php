@@ -31,7 +31,7 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
-            [['reCaptcha'], ReCaptchaValidator::className(), 'uncheckedMessage' => 'Please confirm that you are not a bot.']
+            [['reCaptcha'], ReCaptchaValidator::class, 'uncheckedMessage' => 'Please confirm that you are not a bot.']
         ];
     }
 

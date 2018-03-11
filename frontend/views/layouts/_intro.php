@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->registerAssetBundle(\frontend\assets\IntroAsset::className());
+$this->registerAssetBundle(\frontend\assets\IntroAsset::class);
 ?>
 
 

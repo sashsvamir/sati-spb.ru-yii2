@@ -50,7 +50,7 @@ class Item extends ActiveRecord
 	 */
 	public function getUrlOld()
 	{
-		return $this->hasOne(UrlOld::className(), ['item_id' => 'id']);
+		return $this->hasOne(UrlOld::class, ['item_id' => 'id']);
 	}
 
 	/**
@@ -58,7 +58,7 @@ class Item extends ActiveRecord
 	 */
 	public function getCategory()
 	{
-		return $this->hasOne(Category::className(), ['id' => 'category_id']);
+		return $this->hasOne(Category::class, ['id' => 'category_id']);
 	}
 
 	/**
@@ -66,7 +66,7 @@ class Item extends ActiveRecord
 	 */
 	public function getAttach()
 	{
-		return $this->hasOne(Attach::className(), ['id' => 'attach_id']);
+		return $this->hasOne(Attach::class, ['id' => 'attach_id']);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Item extends ActiveRecord
 	 */
 	public function getImage()
 	{
-		return $this->hasOne(ImageItem::className(), ['id' => 'image_id']);
+		return $this->hasOne(ImageItem::class, ['id' => 'image_id']);
 	}
 
 

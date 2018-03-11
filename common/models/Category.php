@@ -38,7 +38,7 @@ class Category extends ActiveRecord
 	public function behaviors()
 	{
 		return [
-			NestedSetsBehavior::className(),
+			NestedSetsBehavior::class,
 		];
 	}
 
@@ -65,7 +65,7 @@ class Category extends ActiveRecord
 	 */
 	public function getItem()
 	{
-		return $this->hasOne(Item::className(), ['category_id' => 'id']);
+		return $this->hasOne(Item::class, ['category_id' => 'id']);
 	}
 
 	/**
@@ -73,7 +73,7 @@ class Category extends ActiveRecord
 	 */
 	public function getImage()
 	{
-		return $this->hasOne(ImageCategory::className(), ['id' => 'image_id']);
+		return $this->hasOne(ImageCategory::class, ['id' => 'image_id']);
 	}
 
 }

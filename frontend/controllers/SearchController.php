@@ -15,7 +15,7 @@ class SearchController extends Controller
 	public function actionIndex()
 	{
 		$model = new Search([
-			'model' => Item::className(),
+			'model' => Item::class,
 		]);
 
 		// Если GET запрос

@@ -17,7 +17,7 @@ class Item extends \common\models\Item
 	{
 		return [
 			[
-				'class' => TimestampBehavior::className(),
+				'class' => TimestampBehavior::class,
 				'createdAtAttribute' => false,
 				'updatedAtAttribute' => 'updated',
 			],
@@ -39,9 +39,9 @@ class Item extends \common\models\Item
 			[['visible'], 'boolean'],
 			[['priority'], 'integer'],
 
-			[['category_id'], 'exist', 'targetClass' => Category::className(), 'targetAttribute' => 'id'],
-			[['attach_id'], 'exist', 'targetClass' => Attach::className(), 'targetAttribute' => 'id'],
-			// [['image_id'], 'exist', 'targetClass' => Image::className(), 'targetAttribute' => 'id'],
+			[['category_id'], 'exist', 'targetClass' => Category::class, 'targetAttribute' => 'id'],
+			[['attach_id'], 'exist', 'targetClass' => Attach::class, 'targetAttribute' => 'id'],
+			// [['image_id'], 'exist', 'targetClass' => Image::class, 'targetAttribute' => 'id'],
 		];
 	}
 

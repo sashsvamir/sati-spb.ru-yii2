@@ -63,7 +63,7 @@ class FeedbackFormWidget extends Widget
 	 */
 	public function run()
 	{
-		$this->getView()->registerAssetBundle(FeedbackFormAsset::className());
+		$this->getView()->registerAssetBundle(FeedbackFormAsset::class);
 
 		$result = Html::tag('span', 'Запрос', ['class' => 'button']);
 		$result = Html::tag('div', $result, [

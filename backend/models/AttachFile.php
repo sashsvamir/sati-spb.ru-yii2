@@ -39,7 +39,7 @@ class AttachFile extends \common\models\AttachFile
 	{
 		return [
 			[['file'], 'file', 'maxSize' => $this->maxFileSize, 'skipOnEmpty' => false, 'on' => self::SCENARIO_INSERT],
-			[['attach_id'], 'exist', 'targetClass' => Attach::className(), 'targetAttribute' => 'id', 'on' => self::SCENARIO_INSERT],
+			[['attach_id'], 'exist', 'targetClass' => Attach::class, 'targetAttribute' => 'id', 'on' => self::SCENARIO_INSERT],
 			[['filename'], 'validateFilenameUnique', 'on' => self::SCENARIO_INSERT],
 
 			[['alt', 'description'], 'string', 'max' => 255],

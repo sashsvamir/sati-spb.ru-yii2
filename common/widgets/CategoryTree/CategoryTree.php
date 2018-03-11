@@ -28,7 +28,7 @@ class CategoryTree extends Widget
 			return Category::find()->visible()->with('image', 'item')->orderBy('lft')->andWhere('category.depth > 1')->all();
 		}, Yii::$app->params['cacheTime']);
 
-		Yii::$app->view->registerAssetBundle(ColumnizerAsset::className());
+		Yii::$app->view->registerAssetBundle(ColumnizerAsset::class);
 
 		return $this->render($this->view, [
 			'model' => $model,

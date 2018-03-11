@@ -21,7 +21,7 @@ class SiteController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ],
             'page' => [
-	        	'class' => ViewAction::className(),
+	        	'class' => ViewAction::class,
 		        'viewPrefix' => 'page',
 	        ],
         ];
