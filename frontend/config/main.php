@@ -18,6 +18,11 @@ return [
 	    	'class' => 'yii\web\AssetManager',
 		    'linkAssets' => true,
 		    'appendTimestamp' => true,
+		    'bundles' => [
+			    'yii\web\JqueryAsset' => [
+				    'js' => [YII_ENV_DEV ? 'jquery.js' : 'jquery.min.js'], // use minify version
+			    ],
+		    ],
 	    ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
