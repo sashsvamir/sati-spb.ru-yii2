@@ -58,7 +58,7 @@ class Category extends \common\models\Category
 		// set link to related Item model (or unlink if id not passed)
 		$this->unlinkAll('item');
 		if ($this->itemId) {
-			$item = Item::findOne($this->itemId);
+			$item = Item::findOne(['id' => $this->itemId]);
 			$this->link('item', $item);
 		}
 	}
