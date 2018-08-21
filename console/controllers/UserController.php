@@ -83,7 +83,7 @@ class UserController extends Controller
 	 * @throws \yii\console\Exception
 	 * @return User the loaded model
 	 */
-	private function findModel($username)
+	private function findModel(string $username)
 	{
 		if (!$model = User::findOne(['username' => $username])) {
 			throw new Exception('User not found');

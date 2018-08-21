@@ -107,7 +107,7 @@ class CategoryController extends Controller
 	 */
 	protected function findModel(int $id) : Category
 	{
-		if (($model = Category::findOne($id)) !== null) {
+		if (($model = Category::findOne(['id' => $id])) !== null) {
 			return $model;
 		}
 		throw new NotFoundHttpException('The requested page does not exist.');

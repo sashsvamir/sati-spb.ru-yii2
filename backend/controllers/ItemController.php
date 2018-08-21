@@ -86,7 +86,7 @@ class ItemController extends Controller
 	 */
 	protected function findModel(int $id) : Item
 	{
-		if (($model = Item::findOne($id)) !== null) {
+		if (($model = Item::findOne(['id' => $id])) !== null) {
 			return $model;
 		}
 		throw new NotFoundHttpException('The requested page does not exist.');

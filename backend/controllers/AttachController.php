@@ -108,7 +108,7 @@ class AttachController extends Controller
 	 */
 	protected function findModel(int $id) : Attach
 	{
-		if (($model = Attach::findOne($id)) !== null) {
+		if (($model = Attach::findOne(['id' => $id])) !== null) {
 			return $model;
 		}
 		throw new NotFoundHttpException('The requested page does not exist.');
