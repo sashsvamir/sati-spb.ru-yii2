@@ -56,7 +56,7 @@ $items = Item::find()
 
 		<div class="form-group controls">
 			<?= Html::submitButton('Сохранить', ['class' => 'btn btn-success', 'type' => 'submit']) ?>
-			<?php//= Html::submitButton('Удалить', ['class' => 'btn btn-danger', 'type' => 'delete']) ?>
+			<?php //= Html::submitButton('Удалить', ['class' => 'btn btn-danger', 'type' => 'delete']) ?>
 		</div>
 
 

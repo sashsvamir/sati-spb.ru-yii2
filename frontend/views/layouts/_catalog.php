@@ -112,7 +112,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 				<li><a href="/page/contacts">Контакты</a></li>
 				<li><a href="/page/spec">Спец. предложение</a></li>
 				<li><a href="/sitemap">Карта сайта</a></li>
-				<?php//= (YII_DEBUG) ? '<li><a href="/admin/site">' . (Yii::$app->user->isGuest ? 'Вход' : 'Управление') . '</a></li>' : null ?>
+				<?php //= (YII_DEBUG) ? '<li><a href="/admin/site">' . (Yii::$app->user->isGuest ? 'Вход' : 'Управление') . '</a></li>' : null ?>
 			</ul>
 		</div>
 

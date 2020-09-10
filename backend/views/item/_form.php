@@ -40,8 +40,8 @@ $attaches = Attach::find()
 	<?= $form->field($model, 'meta_keywords')->textInput(['maxlength' => true]) ?>
 
 	<?= $form->field($model, 'body')->textarea(['rows' => 31]) ?>
-	<?php//= $form->field($model, 'body_raw')->widget(CKEditor::class, CKEditorHelper::getConfig()) ?>
-	<?php//= $form->field($model, 'body_raw')->widget(WyciwygCodeWidget::class, [
+	<?php //= $form->field($model, 'body_raw')->widget(CKEditor::class, CKEditorHelper::getConfig()) ?>
+	<?php //= $form->field($model, 'body_raw')->widget(WyciwygCodeWidget::class, [
 		// 'uploadUrl' => Url::to(['upload/file-upload']),
 		// 'browserUrl' => Url::to(['elfinder/view']),
 		// 'options' => ['rows' => 31],
