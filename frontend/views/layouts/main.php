@@ -11,7 +11,7 @@ use common\widgets\FeedbackFormWidget\FeedbackFormWidget;
 AppAsset::register($this);
 $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 ?>
-<? $this->beginPage() ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
@@ -25,10 +25,10 @@ $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 	<link href="/img/apple-touch-icon_142x142.png" rel="apple-touch-icon" type="image/png" />
 
     <?= Html::csrfMetaTags() ?>
-    <? $this->head() ?>
+    <?php $this->head() ?>
 </head>
 <body>
-<? $this->beginBody() ?>
+<?php $this->beginBody() ?>
 
 	<?= FeedbackFormWidget::widget([
 		'offsetTarget' => '#menu',
@@ -82,7 +82,7 @@ $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 	<!-- /Yandex.Metrika counter -->
 
 
-<? $this->endBody() ?>
+<?php $this->endBody() ?>
 </body>
 </html>
-<? $this->endPage() ?>
+<?php $this->endPage() ?>

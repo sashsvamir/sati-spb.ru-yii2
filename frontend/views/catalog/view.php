@@ -51,19 +51,19 @@ $this->params['breadcrumbs'][] = $crumb;
 
 	<h1>
 		<?= $model->header ?>
-		<? if ((Yii::$app->user->id === "admin")) : ?>
-			<? // todo: fix link to admin ?>
+		<?php if ((Yii::$app->user->id === "admin")) : ?>
+			<?php // todo: fix link to admin ?>
 			<?= ' ' . Html::a("Изменить", ['/admin/item/update/', 'id' => $model->id], [
 				'class' => 'admin',
 				'style' => 'font-size:.6rem;text-decoration:underline;',
 				'title' => 'Редактировать запись',
 			]) ?>
-		<? endif ?>
+		<?php endif ?>
 	</h1>
 
-	<? if ($model->lider) : ?>
+	<?php if ($model->lider) : ?>
 		<h2><?= $model->lider ?></h2>
-	<? endif ?>
+	<?php endif ?>
 
 	<?= $model->body ?>
 

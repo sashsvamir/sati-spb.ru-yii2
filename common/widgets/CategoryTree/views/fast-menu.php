@@ -16,16 +16,16 @@ use yii\helpers\Url;
 <?= Html::beginTag('div', $htmlOptions) ?>
 
 
-	<? if (!$model) : ?>
+	<?php if (!$model) : ?>
 
-		<? if (!Yii::$app->user->isGuest) : ?>
+		<?php if (!Yii::$app->user->isGuest) : ?>
 			<p>Категории отсутствуют, <?= Html::a('создать', ['/admin/category/add']) ?> корневую категорию?</p>
-		<? endif ?>
+		<?php endif ?>
 
-	<? else: ?>
+	<?php else: ?>
 
 
-		<?
+		<?php
 			$parents = null;
 			if ($item !== null && $item->category) {
 				// берем родительские категории текущей страницы
@@ -90,9 +90,9 @@ use yii\helpers\Url;
 			}
 		?>
 
-	<? endif ?>
+	<?php endif ?>
 
-	<?
+	<?php
 		// если имеются соседние категории 
 		if ($neighbours) {
 			echo '<ul class="subcategories">';

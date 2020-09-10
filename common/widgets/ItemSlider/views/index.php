@@ -13,11 +13,11 @@ use yii\helpers\Url;
 ?>
 
 
-<? if ($model) : ?>
+<?php if ($model) : ?>
 
 	<?= Html::beginTag('ul', $htmlOptions) ?>
 		
-		<? foreach ($model as $item) : ?>
+		<?php foreach ($model as $item) : ?>
 
 			<li class="product-<?= $item->id ?>">
 				<a href="<?= Url::to(['catalog/view', 'url' => $item->url]) ?>">

@@ -27,7 +27,7 @@ $attaches = Attach::find()
 
 
 
-<? $form = ActiveForm::begin([]) ?>
+<?php $form = ActiveForm::begin([]) ?>
 
 
 	<?= $form->errorSummary($model) ?>
@@ -40,8 +40,8 @@ $attaches = Attach::find()
 	<?= $form->field($model, 'meta_keywords')->textInput(['maxlength' => true]) ?>
 
 	<?= $form->field($model, 'body')->textarea(['rows' => 31]) ?>
-	<?//= $form->field($model, 'body_raw')->widget(CKEditor::class, CKEditorHelper::getConfig()) ?>
-	<?//= $form->field($model, 'body_raw')->widget(WyciwygCodeWidget::class, [
+	<?php//= $form->field($model, 'body_raw')->widget(CKEditor::class, CKEditorHelper::getConfig()) ?>
+	<?php//= $form->field($model, 'body_raw')->widget(WyciwygCodeWidget::class, [
 		// 'uploadUrl' => Url::to(['upload/file-upload']),
 		// 'browserUrl' => Url::to(['elfinder/view']),
 		// 'options' => ['rows' => 31],
@@ -57,12 +57,12 @@ $attaches = Attach::find()
 	<?= $form->beginField($model, 'image') ?>
 	<label class="control-label" for="category-image>"><?= $model->getAttributeLabel('image') ?></label>
 	<div class="form-group help-block">
-		<? if ($model->image) : ?>
+		<?php if ($model->image) : ?>
 			<?= Html::img($model->image->getUrl(), ['style' => 'vertical-align:top;align:left;']) ?>
 			<?= Html::a('Редактировать', ['/image/update', 'id' => $model->image->id]) ?><br>
-		<? else : ?>
+		<?php else : ?>
 			<?= $model->id ? Html::a('Создать', ['/image/create'], ['target' => '_blank']) : null ?>
-		<? endif ?>
+		<?php endif ?>
 	</div>
 	<?= $form->endField() ?>
 	<!-- /Image -->
@@ -76,7 +76,7 @@ $attaches = Attach::find()
 	</div>
 
 
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 
 

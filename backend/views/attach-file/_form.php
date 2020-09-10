@@ -17,7 +17,7 @@ use yii\helpers\StringHelper;
 
 
 
-<? $form = ActiveForm::begin([]) ?>
+<?php $form = ActiveForm::begin([]) ?>
 
 
 	<?= $form->errorSummary($model) ?>
@@ -26,11 +26,11 @@ use yii\helpers\StringHelper;
 	<?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
 	<p>
-		<? if ($model->isNewRecord) : ?>
+		<?php if ($model->isNewRecord) : ?>
 			<?= $form->field($model, 'file')->fileInput()->hint('pdf') ?>
-		<? else : ?>
+		<?php else : ?>
 			<?= Html::a($model->getUrl(), $model->getUrl()) ?>
-		<? endif ?>
+		<?php endif ?>
 	</p>
 
 	<div class="form-group">
@@ -38,7 +38,7 @@ use yii\helpers\StringHelper;
 	</div>
 
 
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 
 

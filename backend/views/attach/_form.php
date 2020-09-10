@@ -17,14 +17,14 @@ use yii\helpers\StringHelper;
 
 
 
-<? $form = ActiveForm::begin([]) ?>
+<?php $form = ActiveForm::begin([]) ?>
 
 
 	<?= $form->errorSummary($model) ?>
 
 	<?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-	<? if (!$model->isNewRecord) : ?>
+	<?php if (!$model->isNewRecord) : ?>
 		<p>
 			<?= Html::a('Добавить файл', ['/attach-file/create', 'attach_id' => $model->id], ['class' => 'btn btn-success']) ?>
 		</p>
@@ -64,14 +64,14 @@ use yii\helpers\StringHelper;
 			],
 		]) ?>
 
-	<? endif ?>
+	<?php endif ?>
 
 	<div class="form-group">
 		<?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Сохранить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
 	</div>
 
 
-<? ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 
 

@@ -24,7 +24,7 @@ $items = Item::find()
 <div class="category-update">
 
 
-	<? $form = ActiveForm::begin([]) ?>
+	<?php $form = ActiveForm::begin([]) ?>
 
 
 		<?= $form->field($model, 'title') ?>
@@ -33,34 +33,34 @@ $items = Item::find()
 
 		<?= $form->field($model, 'itemId')->dropDownList($items, ['prompt' => '—'/*, 'value' => $model->item ? $model->item->id : null*/]) ?>
 		<div class="form-group help-block">
-			<? if ($model->item) : ?>
+			<?php if ($model->item) : ?>
 				<?= $model->item ? Html::a('Редактировать', ['/item/update', 'id' => $model->item->id]) : null ?>
-			<? else : ?>
+			<?php else : ?>
 				<?= $model->id ? Html::a('Создать', ['/item/update'], ['target' => '_blank']) : null ?>
-			<? endif ?>
+			<?php endif ?>
 		</div>
 
 		<!-- Image -->
 		<?= $form->beginField($model, 'image') ?>
 			<label class="control-label" for="category-image>"><?= $model->getAttributeLabel('image') ?></label>
 			<div class="form-group help-block">
-				<? if ($model->image) : ?>
+				<?php if ($model->image) : ?>
 						<?= Html::img($model->image->getUrl(), ['style' => 'vertical-align:top;align:left;']) ?>
 						<?= Html::a('Редактировать', ['/image/update', 'id' => $model->image->id]) ?><br>
-				<? else : ?>
+				<?php else : ?>
 					<?= $model->id ? Html::a('Создать', ['/image/create'], ['target' => '_blank']) : null ?>
-				<? endif ?>
+				<?php endif ?>
 			</div>
 		<?= $form->endField() ?>
 		<!-- /Image -->
 
 		<div class="form-group controls">
 			<?= Html::submitButton('Сохранить', ['class' => 'btn btn-success', 'type' => 'submit']) ?>
-			<?//= Html::submitButton('Удалить', ['class' => 'btn btn-danger', 'type' => 'delete']) ?>
+			<?php//= Html::submitButton('Удалить', ['class' => 'btn btn-danger', 'type' => 'delete']) ?>
 		</div>
 
 
-	<? ActiveForm::end() ?>
+	<?php ActiveForm::end() ?>
 
 
 </div>

@@ -18,14 +18,14 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $model->meta_keywords
 
 
 <h1 align="center" style="margin: 1rem auto 4rem;">
-	<? // todo: fix link to admin ?>
+	<?php // todo: fix link to admin ?>
 	<?= $model->header ?>
-	<? if (Yii::$app->user->id === "admin") : ?>
+	<?php if (Yii::$app->user->id === "admin") : ?>
 		<?= Html::a("Изменить", ['/admin/item/update/', 'id' => $model->id], [
 			'class' => 'admin',
 			'style' => 'font-size:.6rem;text-decoration:underline;',
 		]) ?>
-	<? endif ?>
+	<?php endif ?>
 </h1>
 
 

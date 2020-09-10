@@ -16,16 +16,16 @@ use yii\helpers\Url;
 <?= Html::beginTag('div', $htmlOptions) ?>
 
 
-	<? if (!$model) : ?>
+	<?php if (!$model) : ?>
 
-		<? if (!Yii::$app->user->isGuest) : ?>
+		<?php if (!Yii::$app->user->isGuest) : ?>
 			<p>Категории отсутствуют, <?= Html::a('создать', ['/admin/category/add']) ?> корневую категорию?</p>
-		<? endif ?>
+		<?php endif ?>
 
-	<? else: ?>
+	<?php else: ?>
 
 
-		<?
+		<?php
 			$depth = 0;
 			foreach ($model as $category) {
 
@@ -63,7 +63,7 @@ use yii\helpers\Url;
 			}
 		?>
 
-	<? endif ?>
+	<?php endif ?>
 
 
 <?= Html::endTag('div') ?>

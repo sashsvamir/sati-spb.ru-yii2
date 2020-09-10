@@ -11,7 +11,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 
 ?>
 
-<? $this->beginContent(Yii::$app->getLayoutPath() . '/main.php'); ?>
+<?php $this->beginContent(Yii::$app->getLayoutPath() . '/main.php'); ?>
 
 
 
@@ -31,7 +31,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 	</div>
 
 
-	<? if (Yii::$app->controller->id !== 'catalog') : // выводить появляющееся меню продуктов если не открыт продукт (/catalog/view) или его список (/catalog/index) ?>
+	<?php if (Yii::$app->controller->id !== 'catalog') : // выводить появляющееся меню продуктов если не открыт продукт (/catalog/view) или его список (/catalog/index) ?>
 
 		<div id="products-list">
 			<div class="products-list-content">
@@ -41,7 +41,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 			</div>
 		</div>
 
-	<? endif ?>
+	<?php endif ?>
 
 
 
@@ -61,7 +61,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 
 		<div class="content">
 
-			<? if (Yii::$app->controller->id === 'catalog' && Yii::$app->controller->action->id === 'view') {
+			<?php if (Yii::$app->controller->id === 'catalog' && Yii::$app->controller->action->id === 'view') {
 				// если открыт продукт
 				echo CategoryTree::widget([
 					'view' => 'fast-menu',
@@ -71,7 +71,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 				]);
 			} ?>
 
-			<? if (isset($this->params['breadcrumbs'])) {
+			<?php if (isset($this->params['breadcrumbs'])) {
 				echo Breadcrumbs::widget([
 					'encodeLabels' => false,
 					'links' => $this->params['breadcrumbs'],
@@ -112,7 +112,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 				<li><a href="/page/contacts">Контакты</a></li>
 				<li><a href="/page/spec">Спец. предложение</a></li>
 				<li><a href="/sitemap">Карта сайта</a></li>
-				<?//= (YII_DEBUG) ? '<li><a href="/admin/site">' . (Yii::$app->user->isGuest ? 'Вход' : 'Управление') . '</a></li>' : null ?>
+				<?php//= (YII_DEBUG) ? '<li><a href="/admin/site">' . (Yii::$app->user->isGuest ? 'Вход' : 'Управление') . '</a></li>' : null ?>
 			</ul>
 		</div>
 
@@ -120,4 +120,4 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 
 
 
-<? $this->endContent(); ?>
+<?php $this->endContent(); ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 
 use yii\helpers\Html;
 
@@ -8,20 +8,20 @@ use yii\helpers\Html;
 ?>
 
 
-<? if ($model->files) : ?>
+<?php if (isset($model) && $model->files) : ?>
 
 	<table class="item-files">
 		<tbody>
 
-			<? foreach ($model->files as $file) : ?>
+			<?php foreach ($model->files as $file) : ?>
 				<tr>
 					<td><?= $file->description ?></td>
-					<? $description = strip_tags(str_replace( '<br', ', <br', $file->description)); ?>
+					<?php $description = strip_tags(str_replace( '<br', ', <br', $file->description)); ?>
 					<td><a href="<?= $file->getUrl() ?>" alt="<?= Html::encode($file->alt) ?>" title="<?= $description ?>">Скачать pdf</td>
 				</tr>
-			<? endforeach ?>
+			<?php endforeach ?>
 
 		</tbody>
 	</table>
 
-<? endif ?>
+<?php endif ?>

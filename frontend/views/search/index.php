@@ -26,18 +26,18 @@ $this->params['breadcrumbs'][] = 'Поиск';
 	</form>
 
 
-	<? if ($model->hasErrors()) : ?>
+	<?php if ($model->hasErrors()) : ?>
 
 		<p class="header">
 			<?= $model->getFirstError('query') ?>
 		</p>
 
-	<? else : ?>
+	<?php else : ?>
 
 		<?= $this->render('_result', [
 			'model' => $model,
 		]) ?>
 
-	<? endif ?>
+	<?php endif ?>
 
 </div>

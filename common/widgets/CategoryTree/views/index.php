@@ -16,16 +16,16 @@ use yii\helpers\Url;
 
 
 
-	<? if (!$model) : ?>
+	<?php if (!$model) : ?>
 
-		<? if (!Yii::$app->user->isGuest) : ?>
+		<?php if (!Yii::$app->user->isGuest) : ?>
 			<p>Категории отсутствуют, <?= Html::a('создать', ['/admin/category/add']) ?> корневую категорию?</p>
-		<? endif ?>
+		<?php endif ?>
 
-	<? else: ?>
+	<?php else: ?>
 
 
-		<?
+		<?php
 			$depth = 0;
 			foreach ($model as $category) {
 				
@@ -48,7 +48,7 @@ use yii\helpers\Url;
 				}
 				echo '<li class="category-level-' . ($category->depth - 1) . ' ' . ($category->isLeaf() ? 'leaf' : 'parent') . ' ' . ($category->item ? 'attached' : 'noattached') . '">';
 
-					echo '<span class="name ' . ($item->id === $category->item->id ? 'active' : null) . '">';
+					echo '<span class="name ' . (isset($item) && $item->id === $category->item->id ? 'active' : null) . '">';
 						echo ($category->item->url) ? '<a href="' . Url::to(['catalog/view', 'url' => $category->item->url]) . '">' : '';
 							echo Html::encode($category->title);
 						echo ($category->item->url) ? '</a>' : '';
@@ -64,4 +64,4 @@ use yii\helpers\Url;
 			}
 		?>
 
-<? endif ?>
+<?php endif ?>

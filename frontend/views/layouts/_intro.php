@@ -7,7 +7,7 @@ $this->registerAssetBundle(\frontend\assets\IntroAsset::class);
 ?>
 
 
-<? $this->beginContent(Yii::$app->getLayoutPath() . '/main.php'); ?>
+<?php $this->beginContent(Yii::$app->getLayoutPath() . '/main.php'); ?>
 
 
     <!-- Logo -->
@@ -47,4 +47,4 @@ $this->registerAssetBundle(\frontend\assets\IntroAsset::class);
 
 
 
-<? $this->endContent(); ?>
+<?php $this->endContent(); ?>

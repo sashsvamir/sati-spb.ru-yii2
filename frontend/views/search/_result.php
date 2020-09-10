@@ -8,14 +8,14 @@ use yii\helpers\Url;
 
 ?>
 
-<? if ($model->models) : ?>
+<?php if ($model->models) : ?>
 
 	<p class="header">По запросу "<b><?= Html::encode($model->query) ?></b>" найдены следующие результаты:</p>
 
 	<ul>
-		<? foreach ($model->models as $data) : ?>
-			<?
-				/** @var \common\models\Item $data */
+		<?php foreach ($model->models as $data) : ?>
+			<?php
+/** @var \common\models\Item $data */
 				$image = $data->category->image ? $data->category->image->getUrl() : '/img/category/empty.png';
 				$text_part = $model->text_part($data->body_purified, $model->dict);
 			?>
@@ -33,11 +33,11 @@ use yii\helpers\Url;
 				</span>
 
 			</li>
-		<? endforeach ?>
+		<?php endforeach ?>
 	</ul>
 
-<? else : ?>
+<?php else : ?>
 
 	<p class="header">По запросу "<b><?= Html::encode($model->query) ?></b>" ничего не найдено.</p>
 
-<? endif ?>
+<?php endif ?>

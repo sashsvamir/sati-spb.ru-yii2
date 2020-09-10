@@ -151,16 +151,20 @@ class Search extends Model
 			";
 		}
 
-		$model->where(implode(' AND ', $condition));
+		if (isset($condition)) {
+            $model->where(implode(' AND ', $condition));
+        }
 
 		// сортируем: вначало совпадения в заголовке
-		$model->orderBy("(CASE
+        if (isset($keyword)) {
+            $model->orderBy("(CASE
 			WHEN lower(header) LIKE lower('" . $keyword . "%') THEN 1
 			WHEN lower(header) LIKE lower('%" . $keyword . "%') THEN 2
 			WHEN lower(body_purified) LIKE lower('" . $keyword . "%') THEN 3
 			WHEN lower(body_purified) LIKE lower('%" . $keyword . "%') THEN 4
 			ELSE 5
 			END), header");
+        }
 
 		if ($limit && is_numeric($limit)) {
 			$model->limit($limit);
@@ -205,6 +209,7 @@ class Search extends Model
 		}
 
 		// определим позицию искомого слова до первого вхождения
+        $pos = 0;
 		foreach ($needles as $needle) {
 			$pos = mb_strpos(mb_strtolower($keystack, 'UTF-8'), mb_strtolower($needle, 'UTF-8'));
 			if ($pos) {
