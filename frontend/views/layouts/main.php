@@ -40,6 +40,10 @@ $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 	<?= $content ?>
 
 
+	<div class="copy-block copy-st" style="font-size:11px;padding-bottom:10px;text-align:center;">
+		<span style="opacity:.3;">Разработка и продвижение сайта — <a href="https://shykin.ru" target="_blank">shykin.ru</a></span>
+	</div>
+
 
 	<!-- Google analytics -->
 	<script>
