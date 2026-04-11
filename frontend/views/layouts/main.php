@@ -32,7 +32,7 @@ $this->registerLinkTag(['rel' => 'canonical', 'href' => Url::canonical()]);
 
 	<?= FeedbackFormWidget::widget([
 		'offsetTarget' => '#menu',
-		'urlProd' => 'https://intermehanika.ru/feedback/frame/index',
+		'urlProd' => 'https://intermehanika-ltd.ru/feedback/frame/index',
 		'urlDev' => 'http://shop/feedback/frame/index',
 		'referer' => 'sati',
 	]) ?>

@@ -8,6 +8,6 @@ return [
 	    '+7&nbsp;(812)&nbsp;702-70-91',
 	    '+7&nbsp;(812)&nbsp;702-70-92',
     ],
-    'feedback' => 'https://intermehanika.ru/feedback',
+    'feedback' => 'https://intermehanika-ltd.ru/feedback',
     'cacheTime' => 60*60 * 1, // 1 hour
 ];

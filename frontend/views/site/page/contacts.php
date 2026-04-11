@@ -29,7 +29,7 @@
 </p>
 
 <p class="indent-no space-top">
-	<b>E-mail:</b> <a href="mailto:info@intermehanika.ru">info (a) intermehanika.ru</a>
+	<b>E-mail:</b> <a href="mailto:info@intermehanika-ltd.ru">info (a) intermehanika-ltd.ru</a>
 </p>
 
 <p class="indent-no space-top">

@@ -9,7 +9,7 @@
 
 	const config = {
 		buttonId: '#feedback-form-widget',
-		//url: 'https://intermehanika.ru/feedback/frame/index',
+		//url: 'https://intermehanika-ltd.ru/feedback/frame/index',
 		//url: 'http://shop/feedback/frame/index',
 		modalClass: 'modal-feedback-form',
 		buttonClass: 'modal-feedback-control',

@@ -98,8 +98,8 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 			<h4>Контакты</h4>
 			<ul>
 				<li class="phones">Тел.: <span class="phone"><?= implode('</span><br /><span class="phone">', Yii::$app->params['phones']) ?></span></li>
-				<li>E-mail: <a href="mailto:info@intermehanika.ru">info@intermehanika.ru</a></li>
-				<li>Site: <a href="https://intermehanika.ru">intermehanika.ru</a></li>
+				<li>E-mail: <a href="mailto:info@intermehanika-ltd.ru">info@intermehanika-ltd.ru</a></li>
+				<li>Site: <a href="https://intermehanika-ltd.ru">intermehanika-ltd.ru</a></li>
 			</ul>
 		</div>
 
