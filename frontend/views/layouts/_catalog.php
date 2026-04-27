@@ -47,7 +47,7 @@ $this->registerAssetBundle(\frontend\assets\CatalogAsset::class);
 
 	<div id="contacts-info">
 		<p class="header">Официальный представитель в России:</p>
-        <p class="phones"><span class="phone">+7 (812) 468-85-82</span><!--<span class="phone">+7&nbsp;(812)&nbsp;702-70-91</span><br><span class="phone">+7&nbsp;(812)&nbsp;702-70-92</span>--></p>
+        <p class="phones"><span class="phone">+7 (812) 468-85-82</span><br/><!--<span class="phone">+7&nbsp;(812)&nbsp;702-70-91</span><br><span class="phone">+7&nbsp;(812)&nbsp;702-70-92</span>--></p>
 		<p class="feedback">⇒ <a href="<?= Yii::$app->params['feedback'] ?>">заказ on-line</a></p>
 	</div>
 
